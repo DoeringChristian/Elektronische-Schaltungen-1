@@ -1,0 +1,78 @@
+% .:: Laden der LaTeX4EI Formelsammlungsvorlage
+\documentclass[european]{latex4ei_sheet}
+
+\title{Elektronische \\ Schaltungen}
+
+\RequirePackage{latex4ei/latex4ei_unicode}
+
+% DOCUMENT_BEGIN ===============================================================
+\begin{document}
+
+\IfFileExists{git.id}{\input{git.id}}{}
+\ifdefined\GitRevision\mydate{\GitNiceDate\ (git \GitRevision)}\fi
+
+% Title (needs ./img/Logo.pdf)
+\maketitle
+
+\section{Transistoren und passive Bauteile}
+\subsection{MOS-Transistoren}
+
+\begin{sectionbox}
+	\subsubsection{Arbeitsbereiche}
+	Ein MOS-Transistor hat drei verschiedene Arbeitsbereiche
+	\begin{tablebox}{ll}
+	& Triodenbereich \\
+	\cmrule
+	Voraussetzung & $V_{\ir GS} > V_{\ir th}$ und $V_{\ir DS} < V_{\ir GS} - V_{\ir th}$ \\
+	Drainstrom & $I_{\ir D} = \frac{W}{L}k(V_{\ir GS} - V_{\ir th} - \frac{1}{2} V_{\ir DS})V_{\ir DS}$ \\
+	Transkonduktanz & $g_m = \frac{\diff I}{\diff V_{\ir GS}}|_{V_{\ir DS} =\ir const.} = \frac{W}{L}kV_{\ir DS}$ \\
+	Diff. Ausgangsleitw. & $g_{\ir DS} = \frac{W}{L}k(V_{\ir GS}-V_{\ir th}-V_{\ir DS})$\\
+	Charakteristiken & (TODO)\\
+	%TODO Bilder der Ein- und Ausgangskennlinie einfügen VL2: F22
+	\end{tablebox}
+	\begin{tablebox}{ll}
+	& Sättigungsbereich \\
+	\cmrule
+	Voraussetzung & $V_{\ir GS} > V_{\ir th}$ und $V_{\ir DS} > V_{\ir GS} - V_{\ir th}$ \\
+	Drainstrom & $I_{\ir D} = \frac{W}{2L}k(V_{\ir GS} - V_{\ir th})^2$ \\
+	Transkonduktanz & $g_m = \frac{\diff I}{\diff V_{\ir GS}}|_{V_{\ir DS} =\ir const.} = \frac{W}{L}k(V_{\ir GS}-V_{\ir th})$ \\
+	Diff. Ausgangsleitw. & $g_{\ir DS} = \frac{W}{2L}k(V_{\ir GS}-V_{\ir th})^2\lambda \frac{L_{\ir min}}{L}$ \\
+	Charakteristiken & (TODO)\\
+	%TODO Bilder der Ein- und Ausgangskennlinie einfügen VL2: F28
+	\end{tablebox}
+	\begin{tablebox}{ll}
+	& Unterschwellbereich \\
+	\cmrule
+	Voraussetzung & $V_{\ir GS} < V_{\ir th}$\\
+	Drainstrom & $I_{\ir D} = \frac{W}{L}I_{\ir D,0}10^{\frac{V_{\ir GS}-V_{\ir th}}{S}}\left[ 1-\exp{\left( -\frac{V_{\ir DS}q}{kT}\right)}\right]$ \\
+	Charakteristiken & (TODO)\\
+	%TODO Bilder der Ein- und Ausgangskennlinie einfügen VL3: F6
+	\end{tablebox}
+	S: inverse Unterschwellstrom-Steigung\\
+	$k = C_{\ir ox}\mu_{\ir n}$\\
+	$\lambda$: Kanallängenreduktionsfaltor (prozessabhängig)
+\end{sectionbox}
+\begin{sectionbox}
+	\subsubsection{Kleinsignalparameter}
+	Modelle gut für Handentwurf von Schaltungen durch geringe Komplexität und richtiger Abbildung von elementaren physikalischen Gesetzmäßigkeiten.\\
+	Bei Vernachlässigung des Substrateffektes und bei Vernachlässigung der Transistorkapazitäten (niedrige Frequenzen)\\
+	(TODO)\\
+	%TODO Kleinsignal-ESB VL3: F14
+	Bei Vernachlässigung des Substrateffektes aber mit Berücksichtigung der Transistorkapazitäten (höhere Frequenzen)\\
+	(TODO)\\
+	%TODO Kleinsignal-ESB VL3: F15
+	\textbf{Probleme:}
+	\begin{enumerate}
+		\item Übergang des AP von Unterschwellbereich in Inversionsbereich (Unstetigkeit Strom und Kleinsignalparam.)
+		\item Übergang von Triodenbereich in Sättigungsbereich (Unstetigkeit Kleinsignalparam.)
+		\item AP-unabhängigkeit nur mäßig korrekt wiedergegeben
+	\end{enumerate}
+\end{sectionbox}
+\begin{sectionbox}
+	\subsubsection{Kennlinien realer Bauteile}
+	Bestimmung der Schwellenwertspannung aus Eingangskennlinie:\\
+	%TODO Bild VL3: F22
+\end{sectionbox}
+	%
+% DOCUMENT_END =================================================================
+\end{document}
