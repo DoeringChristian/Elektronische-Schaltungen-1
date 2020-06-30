@@ -18,8 +18,8 @@
 \subsection{MOS-Transistoren}
 
 \begin{sectionbox}
-	\subsubsection{Arbeitsbereiche}
-	Ein MOS-Transistor hat drei verschiedene Arbeitsbereiche
+	\subsubsection{Arbeitsbereiche} %TODO I_D Formeln mit Kanallängenmodulationsfaktor
+	Ein MOS-Transistor hat drei verschiedene Arbeitsbereiche. Falls Gate und Drain verbunden sind befindet er sich im Triodenbereich bzw. Unterschwellbereich.
 	\begin{tablebox}{ll}
 	& Triodenbereich \\
 	\cmrule
@@ -55,6 +55,10 @@
 \begin{sectionbox}
 	\subsubsection{Kleinsignalparameter}
 	Modelle gut für Handentwurf von Schaltungen durch geringe Komplexität und richtiger Abbildung von elementaren physikalischen Gesetzmäßigkeiten.\\
+	\begin{itemize}
+		\item Gleichspannungsquellen werden zu Kurzschlüssen
+		\item Gleichstromquellen werden zu Leerläufen
+	\end{itemize}
 	Bei Vernachlässigung des Substrateffektes und bei Vernachlässigung der Transistorkapazitäten (niedrige Frequenzen)\\
 	(TODO)\\
 	%TODO Kleinsignal-ESB VL3: F14
@@ -73,6 +77,74 @@
 	Bestimmung der Schwellenwertspannung aus Eingangskennlinie:\\
 	%TODO Bild VL3: F22
 \end{sectionbox}
-	%
+
+\section{Transistorschaltungsentwurf}
+
+\begin{sectionbox}
+	\subsection{Sourceschaltung}
+	\subsubsection{niedrige Frequenzen}
+	%TODO Bilder VL3: 8-9
+	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m}(r_{\ir DS}\parallel R_{\ir D})$\\
+	Eingangswiderstand: $r_{\ir in} = \frac{V_{\ir in}}{I_{\ir in}} = R_{\ir G}$\\
+	Ausgangswiderstand: $r_{\ir out} = \frac{V_{\ir out}}{I_{\ir out}}|_{v_{\ir in} = 0} = r_{\ir DS}\parallel R_D \approx R_D \quad (R_D \ll r_{\ir DS})$\\
+	\subsubsection{höhere Frequenzen}
+	Komplexer Eingangsleitwert: $y_{\ir in} = \frac{1}{R_{\ir G}}+\j\omega[C_{\ir GS} + C_{\ir GD}(1-A)]$
+	Der \textbf{Miller-Effekt} gewichtet die Kapazität zwischen Eingang und Ausgang der Schaltung $C_{\ir GD}$ wird mit Faktor $1+\abs{A}$ gewichtet.
+	%TODO ESB VL3: 18	
+	\begin{itemize}
+		\item Schaltung mit inventierenden Verstärkerstufen: Bewirkt Bandbegrenzung (Nachteil!!)
+		\item große wirksame Kapazitäten aus kleinen Kapazitäten erzeugen (Miller-Integrator)
+		\item Es gibt Schaltungen, die den Miller-Effekt verringern
+	\end{itemize}
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Drainschaltung}
+	\subsubsection{niedrige Frequenzen}
+		%TODO ESB VL3: 21
+		Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = \frac{g_m}{\left(g_m+\frac{1}{r_{\ir DS}}+\frac{1}{R_{\ir D}}\right)} \approx 1 \left(g_m\gg\frac{1}{R_S}, \frac{1}{r_{\ir DS}}\right)$\\
+		Eingangswiderstand: $r_{\ir in} = \frac{V_{\ir in}}{I_{\ir in}} = R_{\ir G}$\\
+		Ausgangswiderstand: $r_{\ir out} = \frac{V_{\ir out}}{I_{\ir out}}|_{v_{\ir in} = 0} = R_S\parallel r_{\ir DS}\parallel \frac{1}{g_m} \approx \frac{1}{g_m} \quad (g_m\ll \frac{1}{R_S}, \frac{1}{r_{\ir DS}})$
+	\subsubsection{höhere Frequenzen}
+	%TODO ESB VL3: 28
+\end{sectionbox}
+\begin{sectionbox}
+	\subsection{Gateschaltung}
+	\subsubsection{niedrige Frequenzen}
+	%TODO ESB VL3: 30	
+	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} \approx g_m(R_D\parallel r_{\ir DS})$\\
+	Eingangswiderstand: $r_{\ir in} \approx \frac{1}{g_m}$\\
+	Ausgangswiderstand: $r_{\ir out} \approx R_D$\\
+	\subsubsection{höhere Frequenzen}
+	%TODO ESB VL3: 32
+	\subsection{Kleinsignal ESB von komplementären Bauteilen}
+	%TODO ESB VL3: 35
+	\subsection{Bandweite von Schaltungen}
+	Verstärkung: $A(\omega) = \frac{V_{\ir out}}{V_{\ir in}}$\\
+	Betrag: $\abs{A(\omega)} = \sqrt{A(\omega)^2}$\\
+	Phase: $\varphi(A(\omega)) = \arctan\left(\frac{\Im{A(\omega)}}{\Re{A(\omega)}}\right)$\\
+	Verstärkungs-Bandbreite-Produkt: $\abs{A(2\pi f_0)} = 1$\\
+\end{sectionbox}
+\section{Analoge Schaltungen}
+\begin{sectionbox}
+	\subsection{Invertierende MOS-Verstärkerschaltungen}
+	Lösungsansätze (TODO) %TODO	
+	\subsection{Source-Folger}
+	Transistor ist notwendigerweise immer in Sättigung\\
+	Anwendungen: Impedanzwandlung, Gleichspannungs-Pegelanpassung\\
+	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = \frac{g_m}{g_m+g_{\ir DS}}\approx 1$\\
+	Ausgangswiderstand: $r_{\ir out} = \frac{1}{g_m+g_{\ir DS}}\approx \frac{1}{g_m}$
+	%TODO ESB VL5: 30
+	\subsection{Stromspiegel}
+	Stromverstärkung: $I_{\ir D2} = \frac{W_2}{W_1}\frac{L_1}{L_2}I_{\ir D1}$\\
+	Eingangswiderstand: $r_{\ir in} \approx \frac{1}{g_m}$\\
+	Ausgangswiderstand: $r_{\ir out} \approx \frac{1}{g_{\ir DS2}}$\\
+	%TODO ESB VL5: 35 
+	\subsection{Stromquellenschaltung}
+	%TODO VL 5: 39f.
+	\subsection{Differenzstufe} 
+	%TODO Gleichtakt-ESB VL5: 46
+	Es wird eine Verstärkung des Differenzsignals unabhängig vom Gleichtaktsignal angestrebt (d.h. hohe Gleichtaktunterdrückung)
+	Gleichtaktunterdrückung: $\text{CMRR} = \frac{\text{Differenzverstärkung}}{\text{Gleichtaktverstärkung}}$	
+\end{sectionbox}
 % DOCUMENT_END =================================================================
 \end{document}
