@@ -1,0 +1,18 @@
+% .:: Laden der LaTeX4EI Formelsammlungsvorlage
+\documentclass[european]{latex4ei_sheet}
+
+\title{Elektronische \\ Schaltungen}
+
+\RequirePackage{latex4ei/latex4ei_unicode}
+
+% DOCUMENT_BEGIN ===============================================================
+\begin{document}
+
+\IfFileExists{git.id}{\input{git.id}}{}
+\ifdefined\GitRevision\mydate{\GitNiceDate\ (git \GitRevision)}\fi
+
+% Title (needs ./img/Logo.pdf)
+\maketitle
+
+% DOCUMENT_END =================================================================
+\end{document}
