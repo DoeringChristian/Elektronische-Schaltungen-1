@@ -1,0 +1,89 @@
+% .:: Laden der LaTeX4EI Formelsammlungsvorlage
+\documentclass[european]{latex4ei_sheet}
+
+\title{Elektronische \\ Schaltungen \\ Cheatsheet}
+
+\RequirePackage{latex4ei/latex4ei_unicode}
+
+% DOCUMENT_BEGIN ===============================================================
+\begin{document}
+
+\IfFileExists{git.id}{\input{git.id}}{}
+\ifdefined\GitRevision\mydate{\GitNiceDate\ (git \GitRevision)}\fi
+
+% Title (needs ./img/Logo.pdf)
+\maketitle
+
+\section{Stromspiegel mit Widerstand}
+Annahme: Sättigung $\rightarrow V_{\ir GS1} = V_{\ir DD}-RI_{\ir IN}$\\
+Überprüfe, ob Annahme korrekt\\
+$\frac{I_{\ir out}}{I_{\ir in}} = \frac{(W/L)_2}{(W/L)_1}$
+\section{Schalter (Transmission-Gate)}
+$V_{\ir out} \approx V_{\ir in} \rightarrow$ Transistoren in Triodenbereich\\
+\section{Transistor mit resistiver Last}
+	\subsection{Source an GND (immer +)}
+	%TODO ESB
+	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = g_{\ir m1}(r_{\ir DS1}\parallel R_D)$\\
+	$r_{\ir out} = r_{\ir DS1}\parallel R_D$\\
+	\subsection{$V_{\ir in}$ an Source}
+	$r_{\ir in} = R_D \frac{r_{\ir DS}\parallel \frac{1}{g_m}}{r_{\ir DS}\parallel R_D}$
+	
+	\subsection{$R_S$ an Source}
+	
+	
+\section{Sourceschaltung mit Stromquelle (- - -)}
+%TODO ESB
+Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}r_{\ir DS1}$\\
+$r_{\ir out} = r_{\ir DS1}$
+\section{Sourceschaltung mit aktiver Last (- -)}
+%TODO ESB
+Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})$\\
+$r_{\ir out} = r_{\ir DS1}\parallel r_{\ir DS2}$
+\section{Sourceschaltung mit Diodenlast}
+	\subsection{$V_in$ am unteren Transistor (-)}
+	%TODO ESB
+	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}\left( r_{\ir DS1}\parallel r_{\ir DS2}\parallel \frac{1}{g_{\ir m2}}\right)$\\
+	$r_{\ir out} = r_{\ir DS1}\parallel r_{\ir DS2}\parallel \frac{1}{g_{\ir m2}}$
+	\subsection{$V_in$ am oberen Transistor}
+
+\section{Drainschaltung mit aktiver Last}
+	\subsection{ohne Lastkapazität ($\approx 1$)}
+	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = \frac{g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}{1 + g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}$ (kann auch $<1$ sein)\\
+	$r_{\ir out} = \frac{r_{\ir DS1}\parallel r_{\ir DS2}}{1 + g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}$
+	\subsection{mit Lastkapazität}
+	%TODO ESB
+	Verstärkung: $A(\omega) = \frac{g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}{1 + g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})+\j\omega C_L(r_{\ir DS1}\parallel r_{\ir DS2})}$\\
+	Näherung: $\frac{g_{\ir m1}}{g_{\ir m1}+\j\omega C_L}$\\
+	Betrag: $\abs{A(\omega)} = \frac{1}{\sqrt{1+(\omega C_L / g_{\ir m1})^2}}$\\
+	Phase: $\phi(A(\omega) = \arctan{(-\omega C_L / g_{\ir m1})}$\\
+
+\section{Gateschaltung mit resistiver Last}
+- Drainschaltung mit aktiver last
+-Transistor mit resistiver last
+-sourceschaltung mit diodenlast
+
+\section{Stromspiegel mit Stromquelle}
+
+\section{Differenzstufe mit resistiver Last}
+
+\section{Differenzstufe mit Stromspiegel-Last}
+	\subsection{pMOS-Differenzstufe}
+	
+	\subsection{nMOS-Differenzstufe}
+
+\section{Differenzstufe mit Diodenlast}
+
+\section{x1}
+
+\section{x2}
+
+\section{x3}
+
+-Differenzstufe mit Stromspiegel
+
+
+
+
+
+% DOCUMENT_END =================================================================
+\end{document}
