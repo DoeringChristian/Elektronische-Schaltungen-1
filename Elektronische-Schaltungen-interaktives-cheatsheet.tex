@@ -5,6 +5,21 @@
 
 \RequirePackage{latex4ei/latex4ei_unicode}
 
+% -- begin custom TOC for circuits
+\usepackage{tocloft}
+
+\newcommand{\listcircuitname}{Liste der Schaltungen}
+\newlistof{circuit}{cir}{}
+\newcommand{\circuit}[2]{%
+	\refstepcounter{circuit}
+	\section{#1}
+	\addcontentsline{cir}{blabla}
+	{\parbox{\linewidth}{\includegraphics[width=\linewidth]{#2}\\#1\hfill}\ \\}}
+\let\mylistofcircuit\listofcircuit
+\renewcommand{\listofcircuit}{\subsection*{\listcircuitname}\vspace{-1.5em}\begin{multicols}{3}\mylistofcircuit\end{multicols}}
+% -- end
+
+
 % DOCUMENT_BEGIN ===============================================================
 \begin{document}
 
@@ -14,13 +29,15 @@
 % Title (needs ./img/Logo.pdf)
 \maketitle
 
-\section{Stromspiegel mit Widerstand}
+\listofcircuit
+
+\circuit{Stromspiegel mit Widerstand}{img/Logo.pdf}
 Annahme: Sättigung $\rightarrow V_{\ir GS1} = V_{\ir DD}-RI_{\ir IN}$\\
 Überprüfe, ob Annahme korrekt\\
 $\frac{I_{\ir out}}{I_{\ir in}} = \frac{(W/L)_2}{(W/L)_1}$
-\section{Schalter (Transmission-Gate)}
+\circuit{Schalter (Transmission-Gate)}{img/Logo.pdf}
 $V_{\ir out} \approx V_{\ir in} \rightarrow$ Transistoren in Triodenbereich\\
-\section{Transistor mit resistiver Last}
+\circuit{Transistor mit resistiver Last}{img/Logo.pdf}
 	\subsection{Source an GND (immer +)}
 	%TODO ESB
 	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = g_{\ir m1}(r_{\ir DS1}\parallel R_D)$\\
@@ -31,11 +48,11 @@ $V_{\ir out} \approx V_{\ir in} \rightarrow$ Transistoren in Triodenbereich\\
 	\subsection{$R_S$ an Source}
 	
 	
-\section{Sourceschaltung mit Stromquelle (- - -)}
+\circuit{Sourceschaltung mit Stromquelle (- - -)}{img/Logo.pdf}
 %TODO ESB
 Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}r_{\ir DS1}$\\
 $r_{\ir out} = r_{\ir DS1}$
-\section{Sourceschaltung mit aktiver Last (- -)}
+\circuit{Sourceschaltung mit aktiver Last (- -)}{img/Logo.pdf}
 %TODO ESB
 Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})$\\
 $r_{\ir out} = r_{\ir DS1}\parallel r_{\ir DS2}$
@@ -58,9 +75,18 @@ $r_{\ir out} = r_{\ir DS1}\parallel r_{\ir DS2}$
 	Phase: $\phi(A(\omega) = \arctan{(-\omega C_L / g_{\ir m1})}$\\
 
 \section{Gateschaltung mit resistiver Last}
-- Drainschaltung mit aktiver last
--Transistor mit resistiver last
--sourceschaltung mit diodenlast
+%TODO Kleinsignal-ESB
+$A \approx g_mR_d$\\
+$r_\text{out} = r_{DS} \parallel R_D \approx R_D$\\
+$r_\text{in} = R_D\frac{r_{DS}\parallel \frac{1}{g_m}}{r_{DS}\parallel R_D}\approx \frac{1}{g_m}$
+
+\section{Drainschaltung mit aktiver last}
+%TODO ESB
+$A = \frac{g_{m1}(r_{DS1}\parallel r_{DS2})}{1+r_{DS1}\parallel r_{DS2})} \approx 1$\\
+$r_{out}=\frac{r_{DS1}\parallel r_{DS2}}{1+g_m(r_{DS1}\parallel r_{DS2})} \approx \frac{1}{g_{m1}}$
+
+\section{Transistor mit resistiver last}
+\section{sourceschaltung mit diodenlast}
 
 \section{Stromspiegel mit Stromquelle}
 
