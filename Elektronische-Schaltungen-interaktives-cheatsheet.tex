@@ -206,6 +206,7 @@ Fall $R_3 = R_4$ und $R_1 = R_2$: $V_{\ir out} = V_{\ir in,p} - V_{\ir in,p}$
 \end{circuit}
 \begin{circuit}{Miller Operationsverstärker}{img/miller-op.pdf}
 %TODO ESB
+%TODO Spannungsfolger mit Lastwiderstand
 Verstärkung Ausgangsstufe: $A = g_{\ir m5}(r_{\ir DS5}\parallel r_{\ir DS6})$
 $C_1 = C_F(1+A) \approx C_FA$ \qquad $C_2 = C_F\left(1+\frac{1}{A}\right) \approx C_F$ \\
 $C_{\ir out} = C_2 + C_L$\\
@@ -229,6 +230,20 @@ Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 	Übertragungsfunktion $H(\jw)=-\frac{Z_2(\jw)}{Z_1(\jw)}=-\frac{R_2}{R_1}\cdot\frac{\jw R_1C_1}{1+\jw R_1C_1}\cdot\frac{1}{1+\jw R_2C_2}$\\
 	Grenzfrequenz Hochpass $\omega_1=\frac{1}{R_1C_1}$\\
 	Grenzfrequenz Tiefpass $\omega_2=\frac{1}{R_2C_2}$
+\end{circuit}
+
+\begin{circuit}{Nicht-invertierender Verstärker mit part. Tiefpass}{Kap6 S93.pdf}
+	Übertragungsfunktion $H(\jw)=1+\frac{R_2}{R_1}$ $\frac{1}{1+\jw CR_2} = 1+\frac{R_2}{R_1}\frac{1-\jw CR_2}{1+(\omega CR_2)^2}$\\
+	Betrag: $\abs{H(\jw)}=1+\frac{R_2}{R_1}\frac{1}{\sqrt{1+(\omega CR_2)^2}}$\\
+	Phase: $\phi(H(\jw)) = \arctan\left(-\frac{\omega CR_2}{\frac{R_1}{R_2}\left[1+(\omega CR_2)^2\right]+1 }\right)$\\
+	Für kleine $\omega$: $H(\jw) \approx 1 + \frac{R_2}{R_1}$\\
+	Für große $\omega$: $H(\jw) \approx 1$
+\end{circuit}
+
+\begin{circuit}{Nicht-invertierender Verstärker mit part. Hochpass}{Kap6 S100.pdf}
+	Übertragungsfunktion $H(\jw)=1+\frac{R_2}{R_1\parallel\left(R_3+\frac{1}{\jw C}\right)}$\\
+	Für kleine $\omega$: $H(\jw) \approx 1+\frac{R_2}{R_1}$\\
+	Für große $\omega$: $H(\jw) \approx 1+\frac{R_2}{R_1\parallel R_3}$
 \end{circuit}
 
 \begin{circuit}{CMOS Inverter}{img/cmos-inverter.pdf}
@@ -293,14 +308,16 @@ Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 	Phase 1: $V_{\ir SW} = V_{\ir in}$\\
 	Phase 2: $V_{\ir SW} = 0$\\
 	Ausgangsspannung: $V_{\ir out} = \frac{T_{\ir on}}{T_{\ir on}+T_{\ir off}}V_{\ir in}$\\
-	Stromwelligkeit: $I_{\ir ripple} = (V_{\ir in} - V_{\ir out})\frac{T_{\ir on}}{L}$
+	Stromwelligkeit: $I_{\ir ripple} = (V_{\ir in} - V_{\ir out})\frac{T_{\ir on}}{L}$\\
+	Ansatz im stabilen Zustand: $\Delta I_{\ir on} = -\Delta I_{\ir off}$
 \end{circuit}
 
-\begin{circuit}{Boost-Buck-Wandler}{img/boost-buck.pdf}
+\begin{circuit}{Boost-Wandler}{img/boost.pdf}
 	Phase 1: $V_{\ir SW} = 0$\\
 	Phase 2: $V_{\ir SW} = V_{\ir out}$\\
 	Ausgangsspannung: $V_{\ir out} = \frac{T_{\ir on}+T_{\ir off}}{T_{\ir off}}V_{\ir in}$\\
-	Stromwelligkeit: $I_{\ir ripple} = V_{\ir in}\frac{T_{\ir on}}{L}$
+	Stromwelligkeit: $I_{\ir ripple} = V_{\ir in}\frac{T_{\ir on}}{L}$\\
+	Ansatz im stabilen Zustand: $\Delta I_{\ir on} = -\Delta$
 \end{circuit}
 
 \begin{circuit}{Mehrstufige Dickson Ladungspumpe}{img/dickson-ladungspumpe.pdf}
@@ -309,10 +326,10 @@ Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 	$V_{\ir out} = V_{\ir DD} - V_{\ir diode}+ N \cdot (V_{\ir DD} - V_{\ir diode}- I_{\ir out}/f \cdot C)$
 \end{circuit}
 
-%TODO Spannungsfolger mit Lastwiderstand
 %TODO normaler OP-Amp
 %TODO evtl. Instrumentenverstärker
 
+%TODO BW, GBP, Phasenreserve
 
 % DOCUMENT_END =================================================================
 \end{document}
