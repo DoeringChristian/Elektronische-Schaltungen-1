@@ -201,9 +201,43 @@ $A_0 = g_{\ir m1}(r_{\ir DS2}\parallel r_{\ir DS4})g_{\ir m5}(r_{\ir DS5}\parall
 
 \end{circuit}
 \begin{circuit}{Komparator}{img/komparator.pdf}
-Schaltschwellen: $ $\\
+Schaltschwellen: $V_H = 1 + \frac{R_2}{R_1}V_{\ir th}$ \qquad $V_L = \left( 1 + \frac{R_2}{R_1}\right) V_{\ir th}-\frac{R_1}{R_2}V_{\ir DD}$\\
+Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 \end{circuit}
 
+\begin{circuit}{AD Wandler}{img/ad-widerstand.pdf}
+	Quantisierungsschritt: $\Delta = V_{\ir LSB = \frac{V_{\ir ref}}{2^n}}$\\
+	Anzahl Komparatoren: $2^n-1$\\
+	Unterreferenzwerte: $V_r = \frac{\ir Widerstandswert bis zur Referenz}{\ir Gesamtwiderstand}V_{\ir ref}$\\
+	Quantisierungsschrittschawankung: $\Delta_{\ir meas} = V_{r_n+1}-V_{r_n}$\\
+	Differentielle Nichtlinearität: $DNL(n) = \frac{\Delta_{\ir meas}-\Delta}{\Delta}$ \quad $$DNL_{\ir spec} = \frac{\max{(\Delta_{\ir meas})}-\Delta}{\Delta}$$
+\end{circuit}
+
+\begin{circuit}{DA Wandler (Stromquellen)}{img/da-stromquellen.pdf}
+	$V_{\ir out} = \frac{A}{1+A}\left(V_{\ir os}+\frac{RI}{8}(8b_1+4b_2+2b_3+b_4)\right)$\\
+	$GE = -\frac{1}{A}$\\
+\end{circuit}
+
+\begin{circuit}{DA Wandler (Widerstände)}{img/da-widerstand.pdf}
+	$V_{\ir LSB = \frac{V_{\ir ref}}{2^n}}$\\
+	Unterreferenzwerte: $V_r = \frac{\ir Widerstandswert bis zur Referenz}{\ir Gesamtwiderstand}V_{\ir ref}$\\
+	Quantisierungsschrittschawankung: $\Delta_{\ir meas} = V_{r_n+1}-V_{r_n}$\\
+	Differentielle Nichtlinearität: $DNL(n) = \frac{\Delta_{\ir meas}-\Delta}{\Delta}$ \quad $DNL_{\ir spec} = \frac{\max{(\Delta_{\ir meas})}-\Delta}{\Delta}$\\
+	$V_{\ir out,os} = V_{\ir os}$
+\end{circuit}
+
+\begin{circuit}{Low Drop-Out Regler}{img/ldo.pdf}
+	$V_{\ir out} = \left( 1 + \frac{R_2}{R_1}\right) V_{\ir ref}$\\
+	Falls: $R_L \ll R_1 +R_2 \Rightarrow I_L \approx \frac{V_{\ir out}}{R_L}$\\
+	$\abs{V_{\ir GS,eff}} = \sqrt{\frac{2I_D}{k(W/L)}} \Rightarrow V_{\ir in} \geq V_{\ir out} + V_{\ir GS,eff}$
+\end{circuit}
+
+\begin{circuit}{Ladungspumpe}{img/ladungspumpe.pdf}
+	%TODO ESBs Phase1 und 2
+	Phase 1 (S1 = 23, S2 = 23): $Q_{1,A} = C_1V_{\ir DD}$ \quad $Q_{2,A} = C_2V_{\ir out}$\\
+	Phase 2 (S1 = 23, S2 = 23): $Q_{1,B} = C_1(V_{\ir out}-V_{\ir in})$ \quad $Q_{2,B} = C_2V_{\ir out}$\\
+	Ladungskonservierung am Ausgang: $Q_{1,A} + Q_{2,A} = Q_{1,B} + Q_{2,B}$
+\end{circuit}
 
 %TODO Spannungsfolger mit Lastwiderstand
 %TODO normaler OP-Amp
