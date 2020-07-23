@@ -86,10 +86,47 @@ $r_{\ir out} = r_{\ir DS1}\parallel r_{\ir DS2}$
 
 \section{x3}
 
--Differenzstufe mit Stromspiegel
+\circuit{Invertierender Verstärker}{img/invertierender-verstärker.pdf}
+%TODO ESB
+Verstärkung (ideal): $A = -\frac{R_2}{R_1}$\\
+Verstärkung (real): $A = \frac{A\frac{R_2}{R_1+R_2}}{1+A\frac{R_1}{R_1+R_2}}$\\
+Ausgangswiderstand: $r_{\ir out} = 0$\\
+Eingangswiderstand: $r_{\ir in} = R_1$\\
+
+\circuit{Nichtinvertierender Verstärker}{img/nichtinvertierender-verstärker.pdf}
+\subsection{$V_{\ir ref} = 0$}
+Verstärkung (ideal): $A = 1 + \frac{R_2}{R_1}$\\
+Verstärkung (real): $A = \frac{A}{1+A\frac{R_1}{R_1+R_2}}$\\
+Ausgangswiderstand: $r_{\ir out} = 0$\\
+Eingangswiderstand: $r_{\ir in} = \infty$\\
+\subsection{$V_{\ir ref} \neq 0$}
+$A=\frac{V_{\ir out,max}-V_{\ir ref}}{V_{\ir in}-V_{\ir ref}}$
 
 
+\circuit{Summierverstärker}{img/summierverstärker.pdf}
+Ausgangsspannung: $V_{\ir out} = - \sum_{k=1}^N V{\ir ein,k}\frac{R_3}{R_k}$\\
+Fall $k=2$: $-\left( \frac{V_{\ir in,1}}{R_1} + \frac{V_{\ir in,2}}{R_2}R_3\right)$\\ 
+Verstärkung (real): $A = \frac{A}{1+A\frac{R_1}{R_1+R_2}}$\\
+Ausgangswiderstand: $r_{\ir out} = 0$\\
+Eingangswiderstand: $r_{\ir in} = \infty$\\
 
+\circuit{Differenzverstärker}{img/differenzverstärker.pdf}
+Ausgangsspannung: $V_{\ir out} = V_{\ir in,p}\frac{R_4}{R_3+R_4} \frac{R_1+R_2}{R_1} - \frac{R_2}{R_1} V_{\ir in,p}$\\
+Fall $R_3 = R_4$ und $R_1 = R_2$: $V_{\ir out} = V_{\ir in,p} - V_{\ir in,p}$
+
+\circuit{Miller Operationsverstärker}{img/miller-op.pdf}
+%TODO ESB
+Verstärkung Ausgangsstufe: $A = g_{\ir m5}(r_{\ir DS5}\parallel r_{\ir DS6})$
+$C_1 = C_F(1+A) \approx C_FA$ \qquad $C_2 = C_F\left(1+\frac{1}{A}\right) \approx C_F$ \\
+$C_{\ir out} = C_2 + C_L$\\
+Grenzfrequenz: $f_{G1} = \frac{1}{2\pi C_1r_{\ir out,diff}}$ \quad $f_{G2} = \frac{1}{2\pi C_2r_{\ir out,ausgang}}$\\
+$A_0 = g_{\ir m1}(r_{\ir DS2}\parallel r_{\ir DS4})g_{\ir m5}(r_{\ir DS5}\parallel r_{\ir DS6})$\\
+Übertragungsfunktion: $A(\omega)=\frac{A_0}{\left(1+\j\frac{f}{f_1}\right)\left(1+\j\frac{f}{f_2}\right)}$\\
+
+
+%TODO Spannungsfolger mit Lastwiderstand
+%TODO normaler OP-Amp
+%TODO evtl. Instrumentenverstärker
 
 
 % DOCUMENT_END =================================================================
