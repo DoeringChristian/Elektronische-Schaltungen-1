@@ -24,18 +24,19 @@
 \newenvironment{circuit}[2]{%
 	\refstepcounter{circuit}
 	% Content in TOC
-	\addcontentsline{cir}{circuit}
-	{%
-		\parbox{\linewidth}{%
-			\begin{center}%
-				\includegraphics[width=\linewidth,height=\linewidth,keepaspectratio]{#2}%
-			\end{center}%
-			\vspace{-3.8em}\ \\
-			\begin{flushleft}%
-				#1\hfill%
-			\end{flushleft}
-		}%
-		\ \\
+	\addcontentsline{cir}{circuit}{%
+		\parbox[c][\linewidth + 3\baselineskip][c]{\linewidth}{%
+			\parbox[c][\linewidth][c]{\linewidth}{%
+				\begin{center}
+					\includegraphics[width=\linewidth,height=\linewidth,keepaspectratio]{#2}
+				\end{center}
+			}
+			\parbox[c][3\baselineskip][t]{\linewidth}{%
+				\begin{flushleft}
+					#1\hfill
+				\end{flushleft}
+			}
+		}
 	}
 	% Content on page
 	\section{#1}
@@ -73,6 +74,7 @@
 \maketitle
 
 \listofcircuit
+\pagebreak
 
 \begin{circuit}{Stromspiegel mit Widerstand}{img/stromspiegel-mit-widerstand.pdf}
 Annahme: Sättigung $\rightarrow V_{\ir GS1} = V_{\ir DD}-RI_{\ir IN}$\\
