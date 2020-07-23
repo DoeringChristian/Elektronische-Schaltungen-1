@@ -6,9 +6,6 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage[hidelinks]{hyperref}
-\usepackage{float}
-\usepackage{wrapfig}
-\usepackage{placeins}
 
 \newcommand{\ir}{\text}
 \renewcommand{\j}{\text j}
@@ -26,11 +23,6 @@
 \newlistof{circuit}{cir}{}
 \newenvironment{circuit}[2]{%
 	\refstepcounter{circuit}
-	% Content on page
-	\section{#1}
-	\begin{minipage}{5em}
-		\includegraphics[width=5em]{#2}
-	\end{minipage}\\
 	% Content in TOC
 	\addcontentsline{cir}{blabla}
 	{%
@@ -44,7 +36,15 @@
 		}%
 		\ \\
 	}
-}{}
+	% Content on page
+	\section{#1}
+	\begin{minipage}{10em}
+		\includegraphics[height=1.6\linewidth,width=\linewidth,keepaspectratio]{#2}
+	\end{minipage}
+	\begin{minipage}[t]{\linewidth - 10em}
+}{%
+	\end{minipage}
+}
 
 \let\mylistofcircuit\listofcircuit
 \renewcommand{\listofcircuit}{\subsection*{\listcircuitname}\vspace{-1.5em}\begin{multicols}{4}\mylistofcircuit\end{multicols}}
