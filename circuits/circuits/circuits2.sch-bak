@@ -1,0 +1,1841 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L pspice:MPMOS2 M?
+U 1 1 5F1C4E86
+P 1875 1100
+F 0 "M?" H 1775 2475 50  0000 L CNN
+F 1 "M3" H 1925 1100 50  0000 L CNN
+F 2 "" H 1850 1100 50  0001 C CNN
+F 3 "~" H 1850 1100 50  0001 C CNN
+	1    1875 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR?
+U 1 1 5F1C535D
+P 1975 900
+F 0 "#PWR?" H 1975 750 50  0001 C CNN
+F 1 "VDD" H 1990 1073 50  0000 C CNN
+F 2 "" H 1975 900 50  0001 C CNN
+F 3 "" H 1975 900 50  0001 C CNN
+	1    1975 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1150 1300 1150 1100
+Connection ~ 850  1300
+Wire Wire Line
+	850  1400 850  1300
+Wire Wire Line
+	850  1300 1150 1300
+$Comp
+L power:VDD #PWR?
+U 1 1 5F1C2891
+P 850 900
+F 0 "#PWR?" H 850 750 50  0001 C CNN
+F 1 "VDD" H 865 1073 50  0000 C CNN
+F 2 "" H 850 900 50  0001 C CNN
+F 3 "" H 850 900 50  0001 C CNN
+	1    850  900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1C232E
+P 850 1600
+F 0 "#PWR?" H 850 1350 50  0001 C CNN
+F 1 "GNDD" H 854 1445 50  0000 C CNN
+F 2 "" H 850 1600 50  0001 C CNN
+F 3 "" H 850 1600 50  0001 C CNN
+	1    850  1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:CurrentSource I?
+U 1 1 5F1C0E32
+P 850 1500
+F 0 "I?" V 2450 1675 50  0000 R CNN
+F 1 "I_0" V 850 1425 50  0000 R CNN
+F 2 "" H 1060 1585 50  0001 C CNN
+F 3 "" H 1060 1585 50  0001 C CNN
+	1    850  1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L pspice:MPMOS2 M?
+U 1 1 5F1BFAD3
+P 950 1100
+F 0 "M?" H 1175 -175 50  0000 L CNN
+F 1 "M4" H 1000 1100 50  0000 L CNN
+F 2 "" H 925 1100 50  0001 C CNN
+F 3 "~" H 925 1100 50  0001 C CNN
+	1    950  1100
+	-1   0    0    1   
+$EndComp
+$Comp
+L pspice:MPMOS2 M?
+U 1 1 5F1CD890
+P 2375 1500
+F 0 "M?" H 2900 -875 50  0000 L CNN
+F 1 "M2" H 2425 1500 50  0000 L CNN
+F 2 "" H 2350 1500 50  0001 C CNN
+F 3 "~" H 2350 1500 50  0001 C CNN
+	1    2375 1500
+	-1   0    0    1   
+$EndComp
+$Comp
+L pspice:MPMOS2 M?
+U 1 1 5F1CD896
+P 1575 1500
+F 0 "M?" H 1475 2875 50  0000 L CNN
+F 1 "M1" H 1625 1500 50  0000 L CNN
+F 2 "" H 1550 1500 50  0001 C CNN
+F 3 "~" H 1550 1500 50  0001 C CNN
+	1    1575 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1675 1300 1975 1300
+Text Label 1375 1500 2    50   ~ 0
+V_in-
+Text Label 2575 1500 0    50   ~ 0
+V_in+
+Wire Wire Line
+	1975 1900 1975 1700
+Wire Wire Line
+	1975 1700 1675 1700
+Connection ~ 1975 1300
+Wire Wire Line
+	1975 1300 2275 1300
+$Comp
+L pspice:MPMOS2 M?
+U 1 1 5F1D2A6B
+P 3100 1100
+F 0 "M?" H 3000 2475 50  0000 L CNN
+F 1 "M8" H 3150 1100 50  0000 L CNN
+F 2 "" H 3075 1100 50  0001 C CNN
+F 3 "~" H 3075 1100 50  0001 C CNN
+	1    3100 1100
+	1    0    0    -1  
+$EndComp
+Connection ~ 1150 1100
+Wire Wire Line
+	1675 1100 1675 950 
+Connection ~ 1675 1100
+$Comp
+L power:VDD #PWR?
+U 1 1 5F1D6EDC
+P 3200 900
+F 0 "#PWR?" H 3200 750 50  0001 C CNN
+F 1 "VDD" H 3215 1073 50  0000 C CNN
+F 2 "" H 3200 900 50  0001 C CNN
+F 3 "" H 3200 900 50  0001 C CNN
+	1    3200 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:MNMOS2 M?
+U 1 1 5F1D719C
+P 2175 1900
+F 0 "M?" H 2025 3875 50  0000 L CNN
+F 1 "M6" H 2200 1900 50  0000 L CNN
+F 2 "" H 2150 1900 50  0001 C CNN
+F 3 "~" H 2150 1900 50  0001 C CNN
+	1    2175 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:MNMOS2 M?
+U 1 1 5F1D81FE
+P 1775 1900
+F 0 "M?" H 1650 -50 50  0000 L CNN
+F 1 "M5" H 1800 1900 50  0000 L CNN
+F 2 "" H 1750 1900 50  0001 C CNN
+F 3 "~" H 1750 1900 50  0001 C CNN
+	1    1775 1900
+	-1   0    0    1   
+$EndComp
+Connection ~ 1975 1900
+Connection ~ 1675 1700
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1D9ACD
+P 1675 2100
+F 0 "#PWR?" H 1675 1850 50  0001 C CNN
+F 1 "GNDD" H 1679 1945 50  0000 C CNN
+F 2 "" H 1675 2100 50  0001 C CNN
+F 3 "" H 1675 2100 50  0001 C CNN
+	1    1675 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1D9D41
+P 2275 2100
+F 0 "#PWR?" H 2275 1850 50  0001 C CNN
+F 1 "GNDD" H 2279 1945 50  0000 C CNN
+F 2 "" H 2275 2100 50  0001 C CNN
+F 3 "" H 2275 2100 50  0001 C CNN
+	1    2275 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:MNMOS2 M?
+U 1 1 5F1DB0B9
+P 3100 1925
+F 0 "M?" H 2950 3900 50  0000 L CNN
+F 1 "M7" H 3125 1925 50  0000 L CNN
+F 2 "" H 3075 1925 50  0001 C CNN
+F 3 "~" H 3075 1925 50  0001 C CNN
+	1    3100 1925
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1675 950  2900 950 
+Wire Wire Line
+	2900 950  2900 1100
+Wire Wire Line
+	2275 1700 2900 1700
+Wire Wire Line
+	2900 1700 2900 1925
+Connection ~ 2275 1700
+Wire Wire Line
+	3200 1725 3200 1700
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1DCF40
+P 3200 2125
+F 0 "#PWR?" H 3200 1875 50  0001 C CNN
+F 1 "GNDD" H 3204 1970 50  0000 C CNN
+F 2 "" H 3200 2125 50  0001 C CNN
+F 3 "" H 3200 2125 50  0001 C CNN
+	1    3200 2125
+	1    0    0    -1  
+$EndComp
+Text Label 3300 1500 0    50   ~ 0
+V_out
+$Comp
+L Device:C C?
+U 1 1 5F1DD4EC
+P 3050 1700
+F 0 "C?" V 1350 1550 50  0000 C CNN
+F 1 "C_F" V 2889 1700 50  0000 C CNN
+F 2 "" H 3088 1550 50  0001 C CNN
+F 3 "~" H 3050 1700 50  0001 C CNN
+	1    3050 1700
+	0    1    1    0   
+$EndComp
+Connection ~ 3200 1700
+Wire Wire Line
+	3200 1700 3200 1500
+Connection ~ 2900 1700
+Wire Wire Line
+	1150 1100 1675 1100
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F1E6E0F
+P 4200 1250
+F 0 "U?" H 4175 2600 50  0000 C CNN
+F 1 "OP249" H 4200 2500 50  0000 C CNN
+F 2 "" H 4200 1250 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 4200 1250 50  0001 C CNN
+	1    4200 1250
+	1    0    0    -1  
+$EndComp
+Text Label 3900 1150 2    50   ~ 0
+V_in
+$Comp
+L Device:R R?
+U 1 1 5F1E9122
+P 4500 1700
+F 0 "R?" H 4375 3325 50  0000 L CNN
+F 1 "R" H 4550 1700 50  0000 L CNN
+F 2 "" V 4430 1700 50  0001 C CNN
+F 3 "~" H 4500 1700 50  0001 C CNN
+	1    4500 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F1EC4CF
+P 4500 1400
+F 0 "R?" H 4500 2700 50  0000 L CNN
+F 1 "R" H 4550 1400 50  0000 L CNN
+F 2 "" V 4430 1400 50  0001 C CNN
+F 3 "~" H 4500 1400 50  0001 C CNN
+	1    4500 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 1350 3900 1550
+Wire Wire Line
+	3900 1550 4500 1550
+Connection ~ 4500 1550
+Wire Wire Line
+	4700 1250 4500 1250
+Connection ~ 4500 1250
+Text Label 4700 1250 0    50   ~ 0
+V_out
+Wire Wire Line
+	3300 1500 3200 1500
+Connection ~ 3200 1500
+Wire Wire Line
+	3200 1500 3200 1300
+$Comp
+L Graphic:VoltageSource I?
+U 1 1 5F1EDF60
+P 4500 1950
+F 0 "I?" V 2700 1900 50  0000 L CNN
+F 1 "V_ref" V 4500 2075 50  0000 L CNN
+F 2 "" H 4710 2035 50  0001 C CNN
+F 3 "" H 4710 2035 50  0001 C CNN
+	1    4500 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F1F81AB
+P 5975 1575
+F 0 "U?" H 5925 225 50  0000 C CNN
+F 1 "OP249" H 5900 175 50  0000 C CNN
+F 2 "" H 5975 1575 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 5975 1575 50  0001 C CNN
+	1    5975 1575
+	1    0    0    1   
+$EndComp
+Text Label 5250 1475 2    50   ~ 0
+V_in
+$Comp
+L Device:R R?
+U 1 1 5F1F81B2
+P 5400 1475
+F 0 "R?" H 4025 1775 50  0000 L CNN
+F 1 "R1" V 5475 1425 50  0000 L CNN
+F 2 "" V 5330 1475 50  0001 C CNN
+F 3 "~" H 5400 1475 50  0001 C CNN
+	1    5400 1475
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F1F81B8
+P 5925 1125
+F 0 "R?" H 5025 825 50  0000 L CNN
+F 1 "R2" V 6000 1075 50  0000 L CNN
+F 2 "" V 5855 1125 50  0001 C CNN
+F 3 "~" H 5925 1125 50  0001 C CNN
+	1    5925 1125
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6475 1575 6350 1575
+Text Label 6475 1575 0    50   ~ 0
+V_out
+Wire Wire Line
+	6350 1575 6350 1125
+Wire Wire Line
+	6350 1125 6075 1125
+Connection ~ 6350 1575
+Wire Wire Line
+	6350 1575 6275 1575
+Wire Wire Line
+	5550 1475 5625 1475
+Wire Wire Line
+	5775 1125 5625 1125
+Wire Wire Line
+	5625 1125 5625 1475
+Connection ~ 5625 1475
+Wire Wire Line
+	5625 1475 5675 1475
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1FE0D5
+P 5675 1675
+F 0 "#PWR?" H 5675 1425 50  0001 C CNN
+F 1 "GNDD" H 5679 1520 50  0000 C CNN
+F 2 "" H 5675 1675 50  0001 C CNN
+F 3 "" H 5675 1675 50  0001 C CNN
+	1    5675 1675
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F2088C2
+P 7825 1650
+F 0 "U?" H 7775 300 50  0000 C CNN
+F 1 "OP249" H 7750 250 50  0000 C CNN
+F 2 "" H 7825 1650 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 7825 1650 50  0001 C CNN
+	1    7825 1650
+	1    0    0    1   
+$EndComp
+Text Label 7100 1550 2    50   ~ 0
+V_in
+$Comp
+L Device:R R?
+U 1 1 5F2088C9
+P 7250 1550
+F 0 "R?" H 5875 1850 50  0000 L CNN
+F 1 "R1" V 7325 1500 50  0000 L CNN
+F 2 "" V 7180 1550 50  0001 C CNN
+F 3 "~" H 7250 1550 50  0001 C CNN
+	1    7250 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F2088CF
+P 7775 1200
+F 0 "R?" H 6875 900 50  0000 L CNN
+F 1 "R2" V 7850 1150 50  0000 L CNN
+F 2 "" V 7705 1200 50  0001 C CNN
+F 3 "~" H 7775 1200 50  0001 C CNN
+	1    7775 1200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8325 1650 8200 1650
+Text Label 8325 1650 0    50   ~ 0
+V_out
+Wire Wire Line
+	8200 1650 8200 1200
+Wire Wire Line
+	8200 1200 7925 1200
+Connection ~ 8200 1650
+Wire Wire Line
+	8200 1650 8125 1650
+Wire Wire Line
+	7400 1550 7475 1550
+Wire Wire Line
+	7625 1200 7475 1200
+Wire Wire Line
+	7475 1200 7475 1550
+Connection ~ 7475 1550
+Wire Wire Line
+	7475 1550 7525 1550
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F2088E0
+P 7525 1950
+F 0 "#PWR?" H 7525 1700 50  0001 C CNN
+F 1 "GNDD" H 7529 1795 50  0000 C CNN
+F 2 "" H 7525 1950 50  0001 C CNN
+F 3 "" H 7525 1950 50  0001 C CNN
+	1    7525 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:VoltageSource I?
+U 1 1 5F209029
+P 7525 1850
+F 0 "I?" V 5725 1800 50  0000 L CNN
+F 1 "V_os" V 7525 1975 50  0000 L CNN
+F 2 "" H 7735 1935 50  0001 C CNN
+F 3 "" H 7735 1935 50  0001 C CNN
+	1    7525 1850
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F20B653
+P 4500 2050
+F 0 "#PWR?" H 4500 1800 50  0001 C CNN
+F 1 "GNDD" H 4504 1895 50  0000 C CNN
+F 2 "" H 4500 2050 50  0001 C CNN
+F 3 "" H 4500 2050 50  0001 C CNN
+	1    4500 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F214429
+P 10050 1750
+F 0 "U?" H 10000 400 50  0000 C CNN
+F 1 "OP249" H 9975 350 50  0000 C CNN
+F 2 "" H 10050 1750 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 10050 1750 50  0001 C CNN
+	1    10050 1750
+	1    0    0    1   
+$EndComp
+Text Label 9325 1650 2    50   ~ 0
+V_in2
+$Comp
+L Device:R R?
+U 1 1 5F214430
+P 9475 1650
+F 0 "R?" H 8100 1950 50  0000 L CNN
+F 1 "R2" V 9550 1600 50  0000 L CNN
+F 2 "" V 9405 1650 50  0001 C CNN
+F 3 "~" H 9475 1650 50  0001 C CNN
+	1    9475 1650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F214436
+P 10000 1300
+F 0 "R?" H 9100 1000 50  0000 L CNN
+F 1 "R3" V 10075 1250 50  0000 L CNN
+F 2 "" V 9930 1300 50  0001 C CNN
+F 3 "~" H 10000 1300 50  0001 C CNN
+	1    10000 1300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10550 1750 10425 1750
+Text Label 10550 1750 0    50   ~ 0
+V_out
+Wire Wire Line
+	10425 1750 10425 1300
+Wire Wire Line
+	10425 1300 10150 1300
+Connection ~ 10425 1750
+Wire Wire Line
+	10425 1750 10350 1750
+Wire Wire Line
+	9625 1650 9700 1650
+Wire Wire Line
+	9850 1300 9700 1300
+Wire Wire Line
+	9700 1300 9700 1425
+Connection ~ 9700 1650
+Wire Wire Line
+	9700 1650 9750 1650
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F214447
+P 9750 1850
+F 0 "#PWR?" H 9750 1600 50  0001 C CNN
+F 1 "GNDD" H 9754 1695 50  0000 C CNN
+F 2 "" H 9750 1850 50  0001 C CNN
+F 3 "" H 9750 1850 50  0001 C CNN
+	1    9750 1850
+	1    0    0    -1  
+$EndComp
+Text Label 9325 1425 2    50   ~ 0
+V_in1
+$Comp
+L Device:R R?
+U 1 1 5F215C46
+P 9475 1425
+F 0 "R?" H 8100 1725 50  0000 L CNN
+F 1 "R1" V 9550 1375 50  0000 L CNN
+F 2 "" V 9405 1425 50  0001 C CNN
+F 3 "~" H 9475 1425 50  0001 C CNN
+	1    9475 1425
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9625 1425 9700 1425
+Connection ~ 9700 1425
+Wire Wire Line
+	9700 1425 9700 1650
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F21D030
+P 1975 3125
+F 0 "U?" H 2075 -1150 50  0000 C CNN
+F 1 "OP249" H 2175 -1325 50  0000 C CNN
+F 2 "" H 1975 3125 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 1975 3125 50  0001 C CNN
+	1    1975 3125
+	1    0    0    1   
+$EndComp
+Text Label 1225 3225 2    50   ~ 0
+V_in,p
+$Comp
+L Device:R R?
+U 1 1 5F21D037
+P 1375 3225
+F 0 "R?" H -3475 4125 50  0000 L CNN
+F 1 "R3" V 1475 3175 50  0000 L CNN
+F 2 "" V 1305 3225 50  0001 C CNN
+F 3 "~" H 1375 3225 50  0001 C CNN
+	1    1375 3225
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F21D03D
+P 1925 2675
+F 0 "R?" H -1625 2500 50  0000 L CNN
+F 1 "R2" V 2025 2625 50  0000 L CNN
+F 2 "" V 1855 2675 50  0001 C CNN
+F 3 "~" H 1925 2675 50  0001 C CNN
+	1    1925 2675
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2475 3125 2350 3125
+Text Label 2475 3125 0    50   ~ 0
+V_out
+Wire Wire Line
+	2350 3125 2350 2675
+Wire Wire Line
+	2350 2675 2075 2675
+Connection ~ 2350 3125
+Wire Wire Line
+	2350 3125 2275 3125
+Wire Wire Line
+	1775 2675 1625 2675
+Wire Wire Line
+	1625 3025 1675 3025
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F21D04E
+P 1675 3525
+F 0 "#PWR?" H 1675 3275 50  0001 C CNN
+F 1 "GNDD" H 1679 3370 50  0000 C CNN
+F 2 "" H 1675 3525 50  0001 C CNN
+F 3 "" H 1675 3525 50  0001 C CNN
+	1    1675 3525
+	1    0    0    -1  
+$EndComp
+Text Label 1250 3025 2    50   ~ 0
+V_in,n
+$Comp
+L Device:R R?
+U 1 1 5F21D055
+P 1400 3025
+F 0 "R?" H -2775 3700 50  0000 L CNN
+F 1 "R1" V 1300 2975 50  0000 L CNN
+F 2 "" V 1330 3025 50  0001 C CNN
+F 3 "~" H 1400 3025 50  0001 C CNN
+	1    1400 3025
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1550 3025 1625 3025
+$Comp
+L Device:R R?
+U 1 1 5F2293DA
+P 1675 3375
+F 0 "R?" H 1550 -900 50  0000 L CNN
+F 1 "R4" H 1525 3400 50  0000 L CNN
+F 2 "" V 1605 3375 50  0001 C CNN
+F 3 "~" H 1675 3375 50  0001 C CNN
+	1    1675 3375
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1525 3225 1675 3225
+Connection ~ 1675 3225
+Connection ~ 1625 3025
+Wire Wire Line
+	1625 2675 1625 3025
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F255D80
+P 3800 3025
+F 0 "U?" H 3525 -450 50  0000 C CNN
+F 1 "OP249" H 3375 -450 50  0000 C CNN
+F 2 "" H 3800 3025 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 3800 3025 50  0001 C CNN
+	1    3800 3025
+	1    0    0    1   
+$EndComp
+Text Label 3075 3125 2    50   ~ 0
+V_in
+$Comp
+L Device:R R?
+U 1 1 5F255D87
+P 3225 3125
+F 0 "R?" H 7000 2750 50  0000 L CNN
+F 1 "R1" V 3300 3075 50  0000 L CNN
+F 2 "" V 3155 3125 50  0001 C CNN
+F 3 "~" H 3225 3125 50  0001 C CNN
+	1    3225 3125
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F255D8D
+P 3750 3475
+F 0 "R?" H 8075 3600 50  0000 L CNN
+F 1 "R2" V 3825 3425 50  0000 L CNN
+F 2 "" V 3680 3475 50  0001 C CNN
+F 3 "~" H 3750 3475 50  0001 C CNN
+	1    3750 3475
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4300 3025 4175 3025
+Text Label 4300 3025 0    50   ~ 0
+V_out
+Wire Wire Line
+	4175 3025 4175 3475
+Wire Wire Line
+	4175 3475 3900 3475
+Connection ~ 4175 3025
+Wire Wire Line
+	4175 3025 4100 3025
+Wire Wire Line
+	3375 3125 3450 3125
+Wire Wire Line
+	3600 3475 3450 3475
+Wire Wire Line
+	3450 3475 3450 3125
+Connection ~ 3450 3125
+Wire Wire Line
+	3450 3125 3500 3125
+Text Label 3500 2925 2    50   ~ 0
+V_th
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F2709F2
+P 5575 2600
+F 0 "U?" H 5600 5375 50  0000 C CNN
+F 1 "OP249" H 5575 5425 50  0000 C CNN
+F 2 "" H 5575 2600 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 5575 2600 50  0001 C CNN
+	1    5575 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F277016
+P 5575 3125
+F 0 "U?" H 5600 5900 50  0000 C CNN
+F 1 "OP249" H 5575 5950 50  0000 C CNN
+F 2 "" H 5575 3125 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 5575 3125 50  0001 C CNN
+	1    5575 3125
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F27ACBA
+P 5575 3675
+F 0 "U?" H 5625 7250 50  0000 C CNN
+F 1 "OP249" H 5725 7175 50  0000 C CNN
+F 2 "" H 5575 3675 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 5575 3675 50  0001 C CNN
+	1    5575 3675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5275 3575 5150 3575
+Wire Wire Line
+	5150 3575 5150 3025
+Wire Wire Line
+	5275 2500 5150 2500
+Connection ~ 5150 2500
+Wire Wire Line
+	5150 2500 5150 2350
+Wire Wire Line
+	5275 3025 5150 3025
+Connection ~ 5150 3025
+Wire Wire Line
+	5150 3025 5150 2500
+Text Label 5150 2350 0    50   ~ 0
+V_in
+$Comp
+L Device:R R?
+U 1 1 5F284770
+P 4975 3625
+F 0 "R?" H 5200 8275 50  0000 L CNN
+F 1 "R" H 5050 3625 50  0000 L CNN
+F 2 "" V 4905 3625 50  0001 C CNN
+F 3 "~" H 4975 3625 50  0001 C CNN
+	1    4975 3625
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F287831
+P 4975 3075
+F 0 "R?" H 5200 7725 50  0000 L CNN
+F 1 "R" H 5050 3075 50  0000 L CNN
+F 2 "" V 4905 3075 50  0001 C CNN
+F 3 "~" H 4975 3075 50  0001 C CNN
+	1    4975 3075
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F289961
+P 4975 2550
+F 0 "R?" H 5200 7200 50  0000 L CNN
+F 1 "R" H 5050 2550 50  0000 L CNN
+F 2 "" V 4905 2550 50  0001 C CNN
+F 3 "~" H 4975 2550 50  0001 C CNN
+	1    4975 2550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F28C281
+P 4975 3925
+F 0 "R?" H 5200 8575 50  0000 L CNN
+F 1 "R" H 5050 3925 50  0000 L CNN
+F 2 "" V 4905 3925 50  0001 C CNN
+F 3 "~" H 4975 3925 50  0001 C CNN
+	1    4975 3925
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5275 3775 4975 3775
+Connection ~ 4975 3775
+Wire Wire Line
+	5275 3225 4975 3225
+Wire Wire Line
+	4975 3475 4975 3225
+Connection ~ 4975 3225
+Wire Wire Line
+	4975 2925 4975 2700
+Wire Wire Line
+	5275 2700 4975 2700
+Connection ~ 4975 2700
+Wire Wire Line
+	4975 2275 4975 2400
+Text Label 4975 2275 2    50   ~ 0
+V_ref
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F29A856
+P 4975 4075
+F 0 "#PWR?" H 4975 3825 50  0001 C CNN
+F 1 "GNDD" H 4979 3920 50  0000 C CNN
+F 2 "" H 4975 4075 50  0001 C CNN
+F 3 "" H 4975 4075 50  0001 C CNN
+	1    4975 4075
+	1    0    0    -1  
+$EndComp
+Text Label 5875 3675 0    50   ~ 0
+V_out1
+Text Label 5875 3125 0    50   ~ 0
+V_out2
+Text Label 5875 2600 0    50   ~ 0
+V_out3
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F2A51B5
+P 8675 3100
+F 0 "U?" H 8700 -300 50  0000 C CNN
+F 1 "OP249" H 8300 -375 50  0000 C CNN
+F 2 "" H 8675 3100 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 8675 3100 50  0001 C CNN
+	1    8675 3100
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F2A51C2
+P 8625 2650
+F 0 "R?" H 5625 2300 50  0000 L CNN
+F 1 "R" V 8700 2625 50  0000 L CNN
+F 2 "" V 8555 2650 50  0001 C CNN
+F 3 "~" H 8625 2650 50  0001 C CNN
+	1    8625 2650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9175 3100 9050 3100
+Text Label 9175 3100 0    50   ~ 0
+V_out
+Wire Wire Line
+	9050 3100 9050 2650
+Wire Wire Line
+	9050 2650 8775 2650
+Connection ~ 9050 3100
+Wire Wire Line
+	9050 3100 8975 3100
+Wire Wire Line
+	8475 2650 8325 2650
+Wire Wire Line
+	8325 2650 8325 3000
+Connection ~ 8325 3000
+Wire Wire Line
+	8325 3000 8375 3000
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F2A51D3
+P 8375 3600
+F 0 "#PWR?" H 8375 3350 50  0001 C CNN
+F 1 "GNDD" H 8379 3445 50  0000 C CNN
+F 2 "" H 8375 3600 50  0001 C CNN
+F 3 "" H 8375 3600 50  0001 C CNN
+	1    8375 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:CurrentSource I?
+U 1 1 5F2B008E
+P 7900 3100
+F 0 "I?" V 4175 3050 50  0000 L CNN
+F 1 "I/8" V 7900 3175 50  0000 L CNN
+F 2 "" H 8110 3185 50  0001 C CNN
+F 3 "" H 8110 3185 50  0001 C CNN
+	1    7900 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5F1AE229
+P 7900 3400
+F 0 "SW?" V 4100 3300 50  0000 L CNN
+F 1 "b_4" V 7945 3498 50  0000 L CNN
+F 2 "" H 7900 3400 50  0001 C CNN
+F 3 "~" H 7900 3400 50  0001 C CNN
+	1    7900 3400
+	0    1    1    0   
+$EndComp
+$Comp
+L Graphic:CurrentSource I?
+U 1 1 5F1BAF91
+P 7525 3100
+F 0 "I?" V 3800 3050 50  0000 L CNN
+F 1 "I/4" V 7525 3175 50  0000 L CNN
+F 2 "" H 7735 3185 50  0001 C CNN
+F 3 "" H 7735 3185 50  0001 C CNN
+	1    7525 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5F1BAF97
+P 7525 3400
+F 0 "SW?" V 3725 3300 50  0000 L CNN
+F 1 "b_3" V 7570 3498 50  0000 L CNN
+F 2 "" H 7525 3400 50  0001 C CNN
+F 3 "~" H 7525 3400 50  0001 C CNN
+	1    7525 3400
+	0    1    1    0   
+$EndComp
+$Comp
+L Graphic:CurrentSource I?
+U 1 1 5F1BD767
+P 7175 3100
+F 0 "I?" V 3450 3050 50  0000 L CNN
+F 1 "I/2" V 7175 3175 50  0000 L CNN
+F 2 "" H 7385 3185 50  0001 C CNN
+F 3 "" H 7385 3185 50  0001 C CNN
+	1    7175 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5F1BD76D
+P 7175 3400
+F 0 "SW?" V 3375 3300 50  0000 L CNN
+F 1 "b_2" V 7220 3498 50  0000 L CNN
+F 2 "" H 7175 3400 50  0001 C CNN
+F 3 "~" H 7175 3400 50  0001 C CNN
+	1    7175 3400
+	0    1    1    0   
+$EndComp
+$Comp
+L Graphic:CurrentSource I?
+U 1 1 5F1BFB2B
+P 6825 3100
+F 0 "I?" V 3100 3050 50  0000 L CNN
+F 1 "I" V 6825 3175 50  0000 L CNN
+F 2 "" H 7035 3185 50  0001 C CNN
+F 3 "" H 7035 3185 50  0001 C CNN
+	1    6825 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5F1BFB31
+P 6825 3400
+F 0 "SW?" V 3025 3300 50  0000 L CNN
+F 1 "b_1" V 6870 3498 50  0000 L CNN
+F 2 "" H 6825 3400 50  0001 C CNN
+F 3 "~" H 6825 3400 50  0001 C CNN
+	1    6825 3400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6825 3000 7175 3000
+Connection ~ 7175 3000
+Wire Wire Line
+	7175 3000 7525 3000
+Connection ~ 7525 3000
+Wire Wire Line
+	7525 3000 7900 3000
+Connection ~ 7900 3000
+Wire Wire Line
+	7900 3000 8325 3000
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1C6945
+P 7900 3600
+F 0 "#PWR?" H 7900 3350 50  0001 C CNN
+F 1 "GNDD" H 7904 3445 50  0000 C CNN
+F 2 "" H 7900 3600 50  0001 C CNN
+F 3 "" H 7900 3600 50  0001 C CNN
+	1    7900 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1C6F4E
+P 7525 3600
+F 0 "#PWR?" H 7525 3350 50  0001 C CNN
+F 1 "GNDD" H 7529 3445 50  0000 C CNN
+F 2 "" H 7525 3600 50  0001 C CNN
+F 3 "" H 7525 3600 50  0001 C CNN
+	1    7525 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1C811A
+P 7175 3600
+F 0 "#PWR?" H 7175 3350 50  0001 C CNN
+F 1 "GNDD" H 7179 3445 50  0000 C CNN
+F 2 "" H 7175 3600 50  0001 C CNN
+F 3 "" H 7175 3600 50  0001 C CNN
+	1    7175 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1CA26C
+P 6825 3600
+F 0 "#PWR?" H 6825 3350 50  0001 C CNN
+F 1 "GNDD" H 6829 3445 50  0000 C CNN
+F 2 "" H 6825 3600 50  0001 C CNN
+F 3 "" H 6825 3600 50  0001 C CNN
+	1    6825 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:VoltageSource I?
+U 1 1 5F1CFEC1
+P 8375 3500
+F 0 "I?" V 4925 2475 50  0000 L CNN
+F 1 "V_os" V 8375 3625 50  0000 L CNN
+F 2 "" H 8585 3585 50  0001 C CNN
+F 3 "" H 8585 3585 50  0001 C CNN
+	1    8375 3500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8375 3200 8375 3400
+$Comp
+L Device:R R?
+U 1 1 5F1EFC4A
+P 900 4750
+F 0 "R?" H 1100 10500 50  0000 L CNN
+F 1 "R" H 975 4750 50  0000 L CNN
+F 2 "" V 830 4750 50  0001 C CNN
+F 3 "~" H 900 4750 50  0001 C CNN
+	1    900  4750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F1EFC50
+P 900 4450
+F 0 "R?" H 1125 9525 50  0000 L CNN
+F 1 "R" H 975 4450 50  0000 L CNN
+F 2 "" V 830 4450 50  0001 C CNN
+F 3 "~" H 900 4450 50  0001 C CNN
+	1    900  4450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F1EFC56
+P 900 4150
+F 0 "R?" H 1125 8800 50  0000 L CNN
+F 1 "R" H 975 4150 50  0000 L CNN
+F 2 "" V 830 4150 50  0001 C CNN
+F 3 "~" H 900 4150 50  0001 C CNN
+	1    900  4150
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F1EFC5C
+P 900 5050
+F 0 "R?" H 1100 11075 50  0000 L CNN
+F 1 "R" H 975 5050 50  0000 L CNN
+F 2 "" V 830 5050 50  0001 C CNN
+F 3 "~" H 900 5050 50  0001 C CNN
+	1    900  5050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 4900 900  4900
+Wire Wire Line
+	1200 4600 900  4600
+Wire Wire Line
+	1200 4300 900  4300
+Text Label 900  4000 2    50   ~ 0
+V_ref
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1EFC6C
+P 900 5200
+F 0 "#PWR?" H 900 4950 50  0001 C CNN
+F 1 "GNDD" H 904 5045 50  0000 C CNN
+F 2 "" H 900 5200 50  0001 C CNN
+F 3 "" H 900 5200 50  0001 C CNN
+	1    900  5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5F1F4044
+P 1400 4900
+F 0 "SW?" V -5125 4875 50  0000 L CNN
+F 1 "b_2" H 1350 5025 50  0000 L CNN
+F 2 "" H 1400 4900 50  0001 C CNN
+F 3 "~" H 1400 4900 50  0001 C CNN
+	1    1400 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5F201C11
+P 1400 4600
+F 0 "SW?" V -5125 4575 50  0000 L CNN
+F 1 "b_3" H 1350 4725 50  0000 L CNN
+F 2 "" H 1400 4600 50  0001 C CNN
+F 3 "~" H 1400 4600 50  0001 C CNN
+	1    1400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5F204C23
+P 1400 4300
+F 0 "SW?" V -5125 4275 50  0000 L CNN
+F 1 "b_4" H 1350 4425 50  0000 L CNN
+F 2 "" H 1400 4300 50  0001 C CNN
+F 3 "~" H 1400 4300 50  0001 C CNN
+	1    1400 4300
+	1    0    0    -1  
+$EndComp
+Connection ~ 900  4300
+Connection ~ 900  4600
+Connection ~ 900  4900
+Wire Wire Line
+	1200 5200 900  5200
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5F21690C
+P 1400 5200
+F 0 "SW?" V -5125 5175 50  0000 L CNN
+F 1 "b_1" H 1350 5325 50  0000 L CNN
+F 2 "" H 1400 5200 50  0001 C CNN
+F 3 "~" H 1400 5200 50  0001 C CNN
+	1    1400 5200
+	1    0    0    -1  
+$EndComp
+Connection ~ 900  5200
+Wire Wire Line
+	1600 4300 1600 4600
+Connection ~ 1600 4600
+Wire Wire Line
+	1600 4600 1600 4750
+Connection ~ 1600 4900
+Wire Wire Line
+	1600 4900 1600 5200
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F21F24B
+P 2250 4850
+F 0 "U?" H 2225 10125 50  0000 C CNN
+F 1 "OP249" H 2075 9900 50  0000 C CNN
+F 2 "" H 2250 4850 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 2250 4850 50  0001 C CNN
+	1    2250 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 4950 1950 5150
+Wire Wire Line
+	1950 5150 2550 5150
+Wire Wire Line
+	2750 4850 2550 4850
+Text Label 2750 4850 0    50   ~ 0
+V_out
+Wire Wire Line
+	2550 5150 2550 4850
+Connection ~ 2550 4850
+$Comp
+L Graphic:VoltageSource I?
+U 1 1 5F22FABB
+P 1750 4750
+F 0 "I?" V 2100 -400 50  0000 L CNN
+F 1 "V_os" H 1650 4900 50  0000 L CNN
+F 2 "" H 1960 4835 50  0001 C CNN
+F 3 "" H 1960 4835 50  0001 C CNN
+	1    1750 4750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1650 4750 1600 4750
+Connection ~ 1600 4750
+Wire Wire Line
+	1600 4750 1600 4900
+Wire Wire Line
+	1850 4750 1950 4750
+$Comp
+L Amplifier_Operational:OP249 U?
+U 1 1 5F24C502
+P 3675 4375
+F 0 "U?" H 3425 -475 50  0000 C CNN
+F 1 "OP249" H 3550 -525 50  0000 C CNN
+F 2 "" H 3675 4375 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/OP249.pdf" H 3675 4375 50  0001 C CNN
+	1    3675 4375
+	1    0    0    1   
+$EndComp
+Text Label 3375 4275 2    50   ~ 0
+V_ref
+$Comp
+L pspice:MPMOS2 M?
+U 1 1 5F2511D1
+P 4175 4375
+F 0 "M?" H 4075 8475 50  0000 L CNN
+F 1 "M1" H 4225 4375 50  0000 L CNN
+F 2 "" H 4150 4375 50  0001 C CNN
+F 3 "~" H 4150 4375 50  0001 C CNN
+	1    4175 4375
+	1    0    0    -1  
+$EndComp
+Text Label 4275 4175 0    50   ~ 0
+V_in
+$Comp
+L Device:R R?
+U 1 1 5F25A1A9
+P 4275 4725
+F 0 "R?" H 4500 9375 50  0000 L CNN
+F 1 "R2" H 4325 4725 50  0000 L CNN
+F 2 "" V 4205 4725 50  0001 C CNN
+F 3 "~" H 4275 4725 50  0001 C CNN
+	1    4275 4725
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F25DA0B
+P 4275 5025
+F 0 "R?" H 4500 9675 50  0000 L CNN
+F 1 "R1" H 4325 5025 50  0000 L CNN
+F 2 "" V 4205 5025 50  0001 C CNN
+F 3 "~" H 4275 5025 50  0001 C CNN
+	1    4275 5025
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F2610A3
+P 4525 5025
+F 0 "R?" H 4750 9675 50  0000 L CNN
+F 1 "R_L" H 4550 5175 50  0000 L CNN
+F 2 "" V 4455 5025 50  0001 C CNN
+F 3 "~" H 4525 5025 50  0001 C CNN
+	1    4525 5025
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4275 4575 4525 4575
+Wire Wire Line
+	4525 4575 4525 4875
+Connection ~ 4275 4575
+Wire Wire Line
+	4275 4875 3375 4875
+Wire Wire Line
+	3375 4875 3375 4475
+Connection ~ 4275 4875
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F272E7D
+P 4275 5175
+F 0 "#PWR?" H 4275 4925 50  0001 C CNN
+F 1 "GNDD" H 4279 5020 50  0000 C CNN
+F 2 "" H 4275 5175 50  0001 C CNN
+F 3 "" H 4275 5175 50  0001 C CNN
+	1    4275 5175
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F2763F5
+P 4525 5175
+F 0 "#PWR?" H 4525 4925 50  0001 C CNN
+F 1 "GNDD" H 4529 5020 50  0000 C CNN
+F 2 "" H 4525 5175 50  0001 C CNN
+F 3 "" H 4525 5175 50  0001 C CNN
+	1    4525 5175
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_SPDT SW?
+U 1 1 5F286BA7
+P 6600 4375
+F 0 "SW?" H 6600 11475 50  0000 C CNN
+F 1 "S1" V 6650 4375 50  0000 C CNN
+F 2 "" H 6600 4375 50  0001 C CNN
+F 3 "~" H 6600 4375 50  0001 C CNN
+	1    6600 4375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Switch:SW_SPDT SW?
+U 1 1 5F288890
+P 6600 5075
+F 0 "SW?" H 6425 10975 50  0000 C CNN
+F 1 "S2" V 6675 5075 50  0000 C CNN
+F 2 "" H 6600 5075 50  0001 C CNN
+F 3 "~" H 6600 5075 50  0001 C CNN
+	1    6600 5075
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5F28CFAE
+P 6600 4725
+F 0 "C?" H 6675 9225 50  0000 L CNN
+F 1 "C1" H 6600 4650 50  0000 L CNN
+F 2 "" H 6638 4575 50  0001 C CNN
+F 3 "~" H 6600 4725 50  0001 C CNN
+	1    6600 4725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 4175 6300 4175
+Wire Wire Line
+	6300 4175 6300 5275
+Wire Wire Line
+	6300 5275 6500 5275
+$Comp
+L power:VDD #PWR?
+U 1 1 5F292E8B
+P 6300 4175
+F 0 "#PWR?" H 6300 4025 50  0001 C CNN
+F 1 "VDD" H 6315 4348 50  0000 C CNN
+F 2 "" H 6300 4175 50  0001 C CNN
+F 3 "" H 6300 4175 50  0001 C CNN
+	1    6300 4175
+	1    0    0    -1  
+$EndComp
+Connection ~ 6300 4175
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F2948E2
+P 6700 5275
+F 0 "#PWR?" H 6700 5025 50  0001 C CNN
+F 1 "GNDD" H 6704 5120 50  0000 C CNN
+F 2 "" H 6700 5275 50  0001 C CNN
+F 3 "" H 6700 5275 50  0001 C CNN
+	1    6700 5275
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5F29506B
+P 7025 4725
+F 0 "C?" H 6550 9250 50  0000 L CNN
+F 1 "C2" H 7025 4650 50  0000 L CNN
+F 2 "" H 7063 4575 50  0001 C CNN
+F 3 "~" H 7025 4725 50  0001 C CNN
+	1    7025 4725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F298A64
+P 7025 5275
+F 0 "#PWR?" H 7025 5025 50  0001 C CNN
+F 1 "GNDD" H 7029 5120 50  0000 C CNN
+F 2 "" H 7025 5275 50  0001 C CNN
+F 3 "" H 7025 5275 50  0001 C CNN
+	1    7025 5275
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F29C067
+P 7375 5275
+F 0 "#PWR?" H 7375 5025 50  0001 C CNN
+F 1 "GNDD" H 7379 5120 50  0000 C CNN
+F 2 "" H 7375 5275 50  0001 C CNN
+F 3 "" H 7375 5275 50  0001 C CNN
+	1    7375 5275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7025 4575 7025 4175
+Wire Wire Line
+	7025 4175 6700 4175
+Wire Wire Line
+	7025 4875 7025 5275
+$Comp
+L Device:R R?
+U 1 1 5F2ABB1A
+P 7375 4750
+F 0 "R?" H 7600 9400 50  0000 L CNN
+F 1 "R_L" H 7425 4750 50  0000 L CNN
+F 2 "" V 7305 4750 50  0001 C CNN
+F 3 "~" H 7375 4750 50  0001 C CNN
+	1    7375 4750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7375 4600 7375 4175
+Wire Wire Line
+	7375 4175 7025 4175
+Connection ~ 7025 4175
+Text Label 7375 4100 2    50   ~ 0
+V_out
+Wire Wire Line
+	7375 4100 7375 4175
+Connection ~ 7375 4175
+$Comp
+L Simulation_SPICE:DIODE D?
+U 1 1 5F2C3958
+P 8375 4350
+F 0 "D?" H 8700 8525 50  0000 C CNN
+F 1 "D" H 8475 4400 50  0000 C CNN
+F 2 "" H 8375 4350 50  0001 C CNN
+F 3 "~" H 8375 4350 50  0001 C CNN
+F 4 "Y" H 8375 4350 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "D" H 8375 4350 50  0001 L CNN "Spice_Primitive"
+	1    8375 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR?
+U 1 1 5F2C405C
+P 8225 4350
+F 0 "#PWR?" H 8225 4200 50  0001 C CNN
+F 1 "VDD" H 8225 4500 50  0000 C CNN
+F 2 "" H 8225 4350 50  0001 C CNN
+F 3 "" H 8225 4350 50  0001 C CNN
+	1    8225 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5F2C6037
+P 8525 4500
+F 0 "C?" H 8050 9025 50  0000 L CNN
+F 1 "C1" H 8525 4425 50  0000 L CNN
+F 2 "" H 8563 4350 50  0001 C CNN
+F 3 "~" H 8525 4500 50  0001 C CNN
+	1    8525 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:VoltageSource I?
+U 1 1 5F2CB0DD
+P 8525 4750
+F 0 "I?" V 5075 3725 50  0000 L CNN
+F 1 "V_os" V 8525 4875 50  0000 L CNN
+F 2 "" H 8735 4835 50  0001 C CNN
+F 3 "" H 8735 4835 50  0001 C CNN
+	1    8525 4750
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F2CF636
+P 8525 4850
+F 0 "#PWR?" H 8525 4600 50  0001 C CNN
+F 1 "GNDD" H 8529 4695 50  0000 C CNN
+F 2 "" H 8525 4850 50  0001 C CNN
+F 3 "" H 8525 4850 50  0001 C CNN
+	1    8525 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Simulation_SPICE:DIODE D?
+U 1 1 5F2D4DC6
+P 8675 4350
+F 0 "D?" H 8825 8400 50  0000 C CNN
+F 1 "D" H 8775 4400 50  0000 C CNN
+F 2 "" H 8675 4350 50  0001 C CNN
+F 3 "~" H 8675 4350 50  0001 C CNN
+F 4 "Y" H 8675 4350 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "D" H 8675 4350 50  0001 L CNN "Spice_Primitive"
+	1    8675 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5F2D9903
+P 8825 4500
+F 0 "C?" H 8350 9025 50  0000 L CNN
+F 1 "C2" H 8825 4425 50  0000 L CNN
+F 2 "" H 8863 4350 50  0001 C CNN
+F 3 "~" H 8825 4500 50  0001 C CNN
+	1    8825 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F2DDD5E
+P 8825 4850
+F 0 "#PWR?" H 8825 4600 50  0001 C CNN
+F 1 "GNDD" H 8829 4695 50  0000 C CNN
+F 2 "" H 8825 4850 50  0001 C CNN
+F 3 "" H 8825 4850 50  0001 C CNN
+	1    8825 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8825 4650 8825 4850
+$Comp
+L Simulation_SPICE:DIODE D?
+U 1 1 5F2EDAED
+P 8975 4350
+F 0 "D?" H 8775 8325 50  0000 C CNN
+F 1 "D" H 9075 4400 50  0000 C CNN
+F 2 "" H 8975 4350 50  0001 C CNN
+F 3 "~" H 8975 4350 50  0001 C CNN
+F 4 "Y" H 8975 4350 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "D" H 8975 4350 50  0001 L CNN "Spice_Primitive"
+	1    8975 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5F2EDAF3
+P 9125 4500
+F 0 "C?" H 8650 9025 50  0000 L CNN
+F 1 "C1" H 9125 4425 50  0000 L CNN
+F 2 "" H 9163 4350 50  0001 C CNN
+F 3 "~" H 9125 4500 50  0001 C CNN
+	1    9125 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:VoltageSource I?
+U 1 1 5F2EDAF9
+P 9125 4750
+F 0 "I?" V 5675 3725 50  0000 L CNN
+F 1 "V_os" V 9125 4875 50  0000 L CNN
+F 2 "" H 9335 4835 50  0001 C CNN
+F 3 "" H 9335 4835 50  0001 C CNN
+	1    9125 4750
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F2EDAFF
+P 9125 4850
+F 0 "#PWR?" H 9125 4600 50  0001 C CNN
+F 1 "GNDD" H 9129 4695 50  0000 C CNN
+F 2 "" H 9125 4850 50  0001 C CNN
+F 3 "" H 9125 4850 50  0001 C CNN
+	1    9125 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Simulation_SPICE:DIODE D?
+U 1 1 5F2EDB07
+P 9275 4350
+F 0 "D?" H 8725 8425 50  0000 C CNN
+F 1 "D" H 9375 4400 50  0000 C CNN
+F 2 "" H 9275 4350 50  0001 C CNN
+F 3 "~" H 9275 4350 50  0001 C CNN
+F 4 "Y" H 9275 4350 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "D" H 9275 4350 50  0001 L CNN "Spice_Primitive"
+	1    9275 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5F2EDB0D
+P 9425 4500
+F 0 "C?" H 8950 9025 50  0000 L CNN
+F 1 "C2" H 9425 4425 50  0000 L CNN
+F 2 "" H 9463 4350 50  0001 C CNN
+F 3 "~" H 9425 4500 50  0001 C CNN
+	1    9425 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F2EDB13
+P 9425 4850
+F 0 "#PWR?" H 9425 4600 50  0001 C CNN
+F 1 "GNDD" H 9429 4695 50  0000 C CNN
+F 2 "" H 9425 4850 50  0001 C CNN
+F 3 "" H 9425 4850 50  0001 C CNN
+	1    9425 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9425 4650 9425 4850
+Text Label 9725 4350 0    50   ~ 0
+V_out
+Connection ~ 8525 4350
+Connection ~ 8825 4350
+Connection ~ 9125 4350
+$Comp
+L Simulation_SPICE:DIODE D?
+U 1 1 5F2FCD5A
+P 9575 4350
+F 0 "D?" H 9025 8425 50  0000 C CNN
+F 1 "D" H 9675 4400 50  0000 C CNN
+F 2 "" H 9575 4350 50  0001 C CNN
+F 3 "~" H 9575 4350 50  0001 C CNN
+F 4 "Y" H 9575 4350 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "D" H 9575 4350 50  0001 L CNN "Spice_Primitive"
+	1    9575 4350
+	1    0    0    -1  
+$EndComp
+Connection ~ 9425 4350
+Text Notes 8525 4350 0    50   ~ 0
+1
+Text Notes 8825 4350 0    50   ~ 0
+2
+Text Notes 9125 4350 0    50   ~ 0
+3
+Text Notes 9425 4350 0    50   ~ 0
+4
+$Comp
+L Graphic:VoltageSource I?
+U 1 1 5F3049B0
+P 1075 5975
+F 0 "I?" V 7600 5325 50  0000 R CNN
+F 1 "V_in" V 1075 6250 50  0000 R CNN
+F 2 "" H 1285 6060 50  0001 C CNN
+F 3 "" H 1285 6060 50  0001 C CNN
+	1    1075 5975
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5F30765B
+P 1300 5750
+F 0 "SW?" V -5275 5850 50  0000 L CNN
+F 1 "S" H 1275 5725 50  0000 L CNN
+F 2 "" H 1300 5750 50  0001 C CNN
+F 3 "~" H 1300 5750 50  0001 C CNN
+	1    1300 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5F30D167
+P 1850 5750
+F 0 "L?" V 8475 5375 50  0000 C CNN
+F 1 "L" V 1800 5750 50  0000 C CNN
+F 2 "" H 1850 5750 50  0001 C CNN
+F 3 "~" H 1850 5750 50  0001 C CNN
+	1    1850 5750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1075 5875 1075 5750
+Wire Wire Line
+	1075 5750 1100 5750
+$Comp
+L Device:C C?
+U 1 1 5F3227BD
+P 2000 5950
+F 0 "C?" H 2000 12450 50  0000 L CNN
+F 1 "C" H 2000 5875 50  0000 L CNN
+F 2 "" H 2038 5800 50  0001 C CNN
+F 3 "~" H 2000 5950 50  0001 C CNN
+	1    2000 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F3227C3
+P 2350 5950
+F 0 "R?" H 2750 11925 50  0000 L CNN
+F 1 "R" H 2400 5950 50  0000 L CNN
+F 2 "" V 2280 5950 50  0001 C CNN
+F 3 "~" H 2350 5950 50  0001 C CNN
+	1    2350 5950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 5750 2350 5750
+Wire Wire Line
+	2350 5750 2350 5800
+Wire Wire Line
+	2000 5800 2000 5750
+Connection ~ 2000 5750
+Wire Wire Line
+	2350 6100 2350 6150
+Wire Wire Line
+	2350 6150 2000 6150
+Wire Wire Line
+	1075 6075 1075 6150
+Wire Wire Line
+	2000 6100 2000 6150
+Connection ~ 2000 6150
+$Comp
+L Graphic:VoltageSource I?
+U 1 1 5F359CAB
+P 3200 5975
+F 0 "I?" V 9725 5325 50  0000 R CNN
+F 1 "V_in" V 3200 6250 50  0000 R CNN
+F 2 "" H 3410 6060 50  0001 C CNN
+F 3 "" H 3410 6060 50  0001 C CNN
+	1    3200 5975
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5F359CB7
+P 3475 5750
+F 0 "L?" V 10100 5375 50  0000 C CNN
+F 1 "L" V 3425 5750 50  0000 C CNN
+F 2 "" H 3475 5750 50  0001 C CNN
+F 3 "~" H 3475 5750 50  0001 C CNN
+	1    3475 5750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5F359CBD
+P 3725 5950
+F 0 "SW?" V 2850 14775 50  0000 L CNN
+F 1 "S" V 3725 5900 50  0000 L CNN
+F 2 "" H 3725 5950 50  0001 C CNN
+F 3 "~" H 3725 5950 50  0001 C CNN
+	1    3725 5950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3625 5750 3725 5750
+Connection ~ 3725 5750
+Wire Wire Line
+	3725 5750 3825 5750
+Wire Wire Line
+	3200 5875 3200 5750
+$Comp
+L Device:C C?
+U 1 1 5F359CC8
+P 4125 5950
+F 0 "C?" H 3800 12550 50  0000 L CNN
+F 1 "C" H 4125 5875 50  0000 L CNN
+F 2 "" H 4163 5800 50  0001 C CNN
+F 3 "~" H 4125 5950 50  0001 C CNN
+	1    4125 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F359CCE
+P 4475 5950
+F 0 "R?" H 4725 12100 50  0000 L CNN
+F 1 "R" H 4525 5950 50  0000 L CNN
+F 2 "" V 4405 5950 50  0001 C CNN
+F 3 "~" H 4475 5950 50  0001 C CNN
+	1    4475 5950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4125 5750 4475 5750
+Wire Wire Line
+	4475 5750 4475 5800
+Wire Wire Line
+	4125 5800 4125 5750
+Wire Wire Line
+	4475 6100 4475 6150
+Wire Wire Line
+	4475 6150 4125 6150
+Wire Wire Line
+	3200 6075 3200 6150
+Wire Wire Line
+	3200 6150 3725 6150
+Connection ~ 3725 6150
+Wire Wire Line
+	4125 6100 4125 6150
+Connection ~ 4125 6150
+Wire Wire Line
+	4125 6150 3725 6150
+Wire Wire Line
+	1500 5750 1600 5750
+Wire Wire Line
+	1075 6150 1600 6150
+$Comp
+L Simulation_SPICE:DIODE D?
+U 1 1 5F373AEB
+P 1600 5950
+F 0 "D?" H 1750 10000 50  0000 C CNN
+F 1 "D" V 1600 6025 50  0000 C CNN
+F 2 "" H 1600 5950 50  0001 C CNN
+F 3 "~" H 1600 5950 50  0001 C CNN
+F 4 "Y" H 1600 5950 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "D" H 1600 5950 50  0001 L CNN "Spice_Primitive"
+	1    1600 5950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1600 6100 1600 6150
+Connection ~ 1600 6150
+Wire Wire Line
+	1600 6150 2000 6150
+Wire Wire Line
+	1600 5800 1600 5750
+Connection ~ 1600 5750
+Wire Wire Line
+	1600 5750 1700 5750
+$Comp
+L Simulation_SPICE:DIODE D?
+U 1 1 5F38AF9C
+P 3975 5750
+F 0 "D?" H 4125 9800 50  0000 C CNN
+F 1 "D" H 4000 5675 50  0000 C CNN
+F 2 "" H 3975 5750 50  0001 C CNN
+F 3 "~" H 3975 5750 50  0001 C CNN
+F 4 "Y" H 3975 5750 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "D" H 3975 5750 50  0001 L CNN "Spice_Primitive"
+	1    3975 5750
+	1    0    0    -1  
+$EndComp
+Connection ~ 4125 5750
+Wire Wire Line
+	3200 5750 3325 5750
+Wire Wire Line
+	7375 4900 7375 5275
+Text Label 3800 5750 2    50   ~ 0
+V_SW
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1A59C9
+P 1600 6150
+F 0 "#PWR?" H 1600 5900 50  0001 C CNN
+F 1 "GNDD" H 1604 5995 50  0000 C CNN
+F 2 "" H 1600 6150 50  0001 C CNN
+F 3 "" H 1600 6150 50  0001 C CNN
+	1    1600 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5F1A648F
+P 3725 6150
+F 0 "#PWR?" H 3725 5900 50  0001 C CNN
+F 1 "GNDD" H 3729 5995 50  0000 C CNN
+F 2 "" H 3725 6150 50  0001 C CNN
+F 3 "" H 3725 6150 50  0001 C CNN
+	1    3725 6150
+	1    0    0    -1  
+$EndComp
+Text Label 1675 5750 2    50   ~ 0
+V_SW
+Text Label 2350 5750 2    50   ~ 0
+V_out
+Text Label 4475 5750 2    50   ~ 0
+V_out
+$EndSCHEMATC

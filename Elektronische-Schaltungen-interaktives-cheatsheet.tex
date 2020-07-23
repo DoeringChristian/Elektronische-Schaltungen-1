@@ -217,17 +217,35 @@ Schaltschwellen: $V_H = 1 + \frac{R_2}{R_1}V_{\ir th}$ \qquad $V_L = \left( 1 + 
 Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 \end{circuit}
 
+\begin{circuit}{CMOS Inverter}{img/cmos-inverter.pdf}
+	Verstärkung: $A = - \frac{g_{\ir m1}+g_{\ir m2}}{ g_{\ir DS1}+ g_{\ir DS2}}$\\
+	Ausgangswiderstand: $r_{\ir out} = \frac{1}{g_{\ir DS1}+ g_{\ir DS2}}$
+\end{circuit}
+
+\begin{circuit}{Sampler}{img/sampler.pdf}
+	$V(t) = V_0\left[1-\exp(-\frac{t}{\tau})\right]$\\
+	$\tau = (R_{\ir out}+R_{\ir on})C = \frac{1}{2\pi f_c}$\\
+	Nyquist Prinzip: $f_{\ir sample} > 2f_{\ir signalBW}$
+\end{circuit}
+
+\begin{circuit}{Switched-capacitor Prinzip}{img/switched-capacitor}
+	Zur Vermeidung von Schwankungen zwischen Widerständen\\
+	Mittlerer Strom: $I_{\ir AB} = Qf_{\ir clk} = (V_{\ir in}-V{\ir out})Cf_{\ir clk}$\\
+	Äquivalenter Widerstand: $R = \frac{V_{\ir in}-V_{\ir out}}{I_{\ir AB}} = \frac{1}{Cf_{\ir clk}}$
+\end{circuit}
+
 \begin{circuit}{AD Wandler}{img/ad-widerstand.pdf}
-	Quantisierungsschritt: $\Delta = V_{\ir LSB = \frac{V_{\ir ref}}{2^n}}$\\
+	Quantisierungsschritt: $\Delta = V_{\ir LSB} = \frac{V_{\ir ref}}{2^n}$\\
 	Anzahl Komparatoren: $2^n-1$\\
-	Unterreferenzwerte: $V_r = \frac{\ir Widerstandswert bis zur Referenz}{\ir Gesamtwiderstand}V_{\ir ref}$\\
+	Unterreferenzwerte: $V_r = \frac{\text{Widerstandswert bis zur Referenz}}{\text{Gesamtwiderstand}}V_{\ir ref}$\\
 	Quantisierungsschrittschawankung: $\Delta_{\ir meas} = V_{r_n+1}-V_{r_n}$\\
-	Differentielle Nichtlinearität: $DNL(n) = \frac{\Delta_{\ir meas}-\Delta}{\Delta}$ \quad $$DNL_{\ir spec} = \frac{\max{(\Delta_{\ir meas})}-\Delta}{\Delta}$$
+	Differentielle Nichtlinearität: $DNL(n) = \frac{\Delta_{\ir meas}-\Delta}{\Delta}$ \quad $DNL_{\ir spec} = \frac{\max{(\Delta_{\ir meas})}-\Delta}{\Delta}$\\
+	Integrale Nichtlinearität: $INL(n) = (1+GE)\sum_{i=1}^k DNL(i)$\\
 \end{circuit}
 
 \begin{circuit}{DA Wandler (Stromquellen)}{img/da-stromquellen.pdf}
 	$V_{\ir out} = \frac{A}{1+A}\left(V_{\ir os}+\frac{RI}{8}(8b_1+4b_2+2b_3+b_4)\right)$\\
-	$GE = -\frac{1}{A}$\\
+	Verstärkungsfehler: $GE = -\frac{1}{A}$\\
 \end{circuit}
 
 \begin{circuit}{DA Wandler (Widerstände)}{img/da-widerstand.pdf}
@@ -247,8 +265,28 @@ Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 \begin{circuit}{Ladungspumpe}{img/ladungspumpe.pdf}
 	%TODO ESBs Phase1 und 2
 	Phase 1 (S1 = 12, S2 = 12): $Q_{1,A} = C_1V_{\ir DD}$ \quad $Q_{2,A} = C_2V_{\ir out}$\\
-	Phase 2 (S1 = 23, S2 = 23): $Q_{1,B} = C_1(V_{\ir out}-V_{\ir in})$ \quad $Q_{2,B} = C_2V_{\ir out}$\\
+	Phase 2 (S1 = 23, S2 = 23): $Q_{1,B} = C_1(V_{\ir out}-V_{\ir DD})$ \quad $Q_{2,B} = C_2V_{\ir out}$\\
 	Ladungskonservierung am Ausgang: $Q_{1,A} + Q_{2,A} = Q_{1,B} + Q_{2,B}$
+\end{circuit}
+
+\begin{circuit}{Buck-Wandler}{img/buck-wandler.pdf}
+	Phase 1: $V_{\ir SW} = V_{\ir in}$\\
+	Phase 2: $V_{\ir SW} = 0$\\
+	Ausgangsspannung: $V_{\ir out} = \frac{T_{\ir on}}{T_{\ir on}+T_{\ir off}}V_{\ir in}$\\
+	Stromwelligkeit: $I_{\ir ripple} = (V_{\ir in} - V_{\ir out})\frac{T_{\ir on}}{L}$
+\end{circuit}
+
+\begin{circuit}{Boost-Buck-Wandler}{img/boost-buck.pdf}
+	Phase 1: $V_{\ir SW} = 0$\\
+	Phase 2: $V_{\ir SW} = V_{\ir out}$\\
+	Ausgangsspannung: $V_{\ir out} = \frac{T_{\ir on}+T_{\ir off}}{T_{\ir off}}V_{\ir in}$\\
+	Stromwelligkeit: $I_{\ir ripple} = V_{\ir in}\frac{T_{\ir on}}{L}$
+\end{circuit}
+
+\begin{circuit}{Mehrstufige Dickson Ladungspumpe}{img/dickson-ladungspumpe.pdf}
+	Maximale Spannungserhöhung pro Stufe: $\delta V_{\ir max} = V_{\ir DD} - V_{\ir diode}$\\
+	$V_{\ir out,max} = V_{\ir DD} - V_{\ir diode}+ N \cdot (V_{\ir DD} - V_{\ir diode})$\\
+	$V_{\ir out} = V_{\ir DD} - V_{\ir diode}+ N \cdot (V_{\ir DD} - V_{\ir diode}- I_{\ir out}/f \cdot C)$
 \end{circuit}
 
 %TODO Spannungsfolger mit Lastwiderstand

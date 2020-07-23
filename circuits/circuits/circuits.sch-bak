@@ -1368,17 +1368,6 @@ $EndComp
 Wire Wire Line
 	9600 3125 9600 3425
 $Comp
-L Device:R R?
-U 1 1 5F28325C
-P 10725 4625
-F 0 "R?" H 10550 7150 50  0000 L CNN
-F 1 "R_D" H 10775 4625 50  0000 L CNN
-F 2 "" V 10655 4625 50  0001 C CNN
-F 3 "~" H 10725 4625 50  0001 C CNN
-	1    10725 4625
-	1    0    0    -1  
-$EndComp
-$Comp
 L Graphic:VoltageSource I?
 U 1 1 5F283264
 P 10800 3525
