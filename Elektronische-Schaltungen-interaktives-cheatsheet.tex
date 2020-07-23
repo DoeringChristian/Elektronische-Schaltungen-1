@@ -8,9 +8,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{tocloft}
 
-\newcommand{\ir}{\text}
-\renewcommand{\j}{\text j}
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\usepackage{latex4ei/scientific}
 
 \title{Elektronische Schaltungen: Interaktives Cheatsheet}
 \author{Paul Thiel, Justus Rossmeier}
@@ -248,7 +246,7 @@ Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 
 \begin{circuit}{Ladungspumpe}{img/ladungspumpe.pdf}
 	%TODO ESBs Phase1 und 2
-	Phase 1 (S1 = 23, S2 = 23): $Q_{1,A} = C_1V_{\ir DD}$ \quad $Q_{2,A} = C_2V_{\ir out}$\\
+	Phase 1 (S1 = 12, S2 = 12): $Q_{1,A} = C_1V_{\ir DD}$ \quad $Q_{2,A} = C_2V_{\ir out}$\\
 	Phase 2 (S1 = 23, S2 = 23): $Q_{1,B} = C_1(V_{\ir out}-V_{\ir in})$ \quad $Q_{2,B} = C_2V_{\ir out}$\\
 	Ladungskonservierung am Ausgang: $Q_{1,A} + Q_{2,A} = Q_{1,B} + Q_{2,B}$
 \end{circuit}
