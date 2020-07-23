@@ -159,15 +159,7 @@ $V_\text{GS1} + V_\text{GS3} - V_\text{th} \leq V_\text{in} \leq V_\text{out-} +
 \begin{circuit}{Differenzstufe mit Diodenlast}{img/Logo.pdf}
 
 \end{circuit}
-\begin{circuit}{x1}{img/Logo.pdf}
 
-\end{circuit}
-\begin{circuit}{x2}{img/Logo.pdf}
-
-\end{circuit}
-\begin{circuit}{x3}{img/Logo.pdf}
-
-\end{circuit}
 \begin{circuit}{Invertierender Verstärker}{img/invertierender-verstärker.pdf}
 %TODO ESB
 Verstärkung (ideal): $A = -\frac{R_2}{R_1}$\\
@@ -227,13 +219,13 @@ Schaltschwellen: $V_H = 1 + \frac{R_2}{R_1}V_{\ir th}$ \qquad $V_L = \left( 1 + 
 Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 \end{circuit}
 
-\begin{circuit}{Komperator mit Hysterese}{Blatt8 Aufgabe4.pdf}
+\begin{circuit}{Komperator mit Hysterese}{img/komparator-mit-hysterese.pdf}
 	Obere Schwelle: $V_{\ir H}=\left(1+\frac{R_3}{R_4}\right)V_{\ir TH}$\\
 	Untere Schwelle: $V_L = \left(1+\frac{R_3}{R_4}\right)V_{\ir TH}-\frac{R_3}{R_4}V_{\ir CC}$\\
 	Hysterese: $V_{\ir HYS} = V_{\ir H}-V_{\ir L}$
 \end{circuit}
 
-\begin{circuit}{Invertierender Bandpass}{Blatt9 Aufgabe1.pdf}
+\begin{circuit}{Invertierender Bandpass}{img/invertierender-bandpass.pdf}
 	Übertragungsfunktion $H(\jw)=-\frac{Z_2(\jw)}{Z_1(\jw)}=-\frac{R_2}{R_1}\cdot\frac{\jw R_1C_1}{1+\jw R_1C_1}\cdot\frac{1}{1+\jw R_2C_2}$\\
 	Grenzfrequenz Hochpass $\omega_1=\frac{1}{R_1C_1}$\\
 	Grenzfrequenz Tiefpass $\omega_2=\frac{1}{R_2C_2}$
@@ -285,7 +277,7 @@ Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 	$\abs{V_{\ir GS,eff}} = \sqrt{\frac{2I_D}{k(W/L)}} \Rightarrow V_{\ir in} \geq V_{\ir out} + V_{\ir GS,eff}$
 \end{circuit}
 
-\begin{circuit}{SC-Integrierer}{Blatt10 Aufgabe1.pdf}
+\begin{circuit}{SC-Integrierer}{img/sc-integrierer.pdf}
 	$f_\text{sample} \ge 2 f_\text{signal} \Rightarrow f_\text{antialias} \le \frac{f_\text{clk}}{2}$\\
 	$V_{\ir out}(nT) = V_{\ir out,0} - V_{\ir in}\cdot n \cdot \frac{C_1}{C_2}$
 \end{circuit}
