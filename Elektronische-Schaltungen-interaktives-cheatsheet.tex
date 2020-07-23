@@ -15,6 +15,8 @@
 
 %\RequirePackage{latex4ei/latex4ei_unicode}
 
+\newcommand{\jw}{\j\omega}
+
 % set font
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -204,6 +206,12 @@ Ausgangsspannung: $V_{\ir out} = V_{\ir in,p}\frac{R_4}{R_3+R_4} \frac{R_1+R_2}{
 Fall $R_3 = R_4$ und $R_1 = R_2$: $V_{\ir out} = V_{\ir in,p} - V_{\ir in,p}$
 
 \end{circuit}
+\begin{circuit}{Strom/Spannungswandler}{img/Logo.pdf}
+	$V_ {\ir out} = V_{\ir ref}+I_{\ir in}R_2$
+\end{circuit}
+\begin{circuit}{Instrumentenverstärker mit 2 OPV}{img/Logo.pdf}
+	$V_{\ir O} = \left(1+\frac{R_2}{R_1}+\frac{2R_2}{R_5}\right)(V_{\ir i2} - V_{\ir i1})$
+\end{circuit}
 \begin{circuit}{Miller Operationsverstärker}{img/miller-op.pdf}
 %TODO ESB
 Verstärkung Ausgangsstufe: $A = g_{\ir m5}(r_{\ir DS5}\parallel r_{\ir DS6})$
@@ -217,6 +225,18 @@ $A_0 = g_{\ir m1}(r_{\ir DS2}\parallel r_{\ir DS4})g_{\ir m5}(r_{\ir DS5}\parall
 \begin{circuit}{Komparator}{img/komparator.pdf}
 Schaltschwellen: $V_H = 1 + \frac{R_2}{R_1}V_{\ir th}$ \qquad $V_L = \left( 1 + \frac{R_2}{R_1}\right) V_{\ir th}-\frac{R_1}{R_2}V_{\ir DD}$\\
 Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
+\end{circuit}
+
+\begin{circuit}{Komperator mit Hysterese}{Blatt8 Aufgabe4.pdf}
+	Obere Schwelle: $V_{\ir H}=\left(1+\frac{R_3}{R_4}\right)V_{\ir TH}$\\
+	Untere Schwelle: $V_L = \left(1+\frac{R_3}{R_4}\right)V_{\ir TH}-\frac{R_3}{R_4}V_{\ir CC}$\\
+	Hysterese: $V_{\ir HYS} = V_{\ir H}-V_{\ir L}$
+\end{circuit}
+
+\begin{circuit}{Invertierender Bandpass}{Blatt9 Aufgabe1.pdf}
+	Übertragungsfunktion $H(\jw)=-\frac{Z_2(\jw)}{Z_1(\jw)}=-\frac{R_2}{R_1}\cdot\frac{\jw R_1C_1}{1+\jw R_1C_1}\cdot\frac{1}{1+\jw R_2C_2}$\\
+	Grenzfrequenz Hochpass $\omega_1=\frac{1}{R_1C_1}$\\
+	Grenzfrequenz Tiefpass $\omega_2=\frac{1}{R_2C_2}$
 \end{circuit}
 
 \begin{circuit}{CMOS Inverter}{img/cmos-inverter.pdf}
@@ -241,8 +261,9 @@ Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 	Anzahl Komparatoren: $2^n-1$\\
 	Unterreferenzwerte: $V_r = \frac{\text{Widerstandswert bis zur Referenz}}{\text{Gesamtwiderstand}}V_{\ir ref}$\\
 	Quantisierungsschrittschawankung: $\Delta_{\ir meas} = V_{r_n+1}-V_{r_n}$\\
-	Differentielle Nichtlinearität: $DNL(n) = \frac{\Delta_{\ir meas}-\Delta}{\Delta}$ \quad $DNL_{\ir spec} = \frac{\max{(\Delta_{\ir meas})}-\Delta}{\Delta}$\\
-	Integrale Nichtlinearität: $INL(n) = (1+GE)\sum_{i=1}^k DNL(i)$\\
+	Differentielle Nichtlinearität: $\text{DNL}(n) = \frac{\Delta_{\ir meas}-\Delta}{\Delta}$ \quad $\text{DNL}_{\ir spec} = \frac{\max{\abs{\Delta_{\ir meas}}}-\Delta}{\Delta}$\\
+	Integrale Nichtlinearität: $\text{INL}(n) = (1+\text{GE})\sum_{i=1}^k \text{DNL}(i)$\\
+	%TODO: GE??
 \end{circuit}
 
 \begin{circuit}{DA Wandler (Stromquellen)}{img/da-stromquellen.pdf}
@@ -262,6 +283,11 @@ Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 	$V_{\ir out} = \left( 1 + \frac{R_2}{R_1}\right) V_{\ir ref}$\\
 	Falls: $R_L \ll R_1 +R_2 \Rightarrow I_L \approx \frac{V_{\ir out}}{R_L}$\\
 	$\abs{V_{\ir GS,eff}} = \sqrt{\frac{2I_D}{k(W/L)}} \Rightarrow V_{\ir in} \geq V_{\ir out} + V_{\ir GS,eff}$
+\end{circuit}
+
+\begin{circuit}{SC-Integrierer}{Blatt10 Aufgabe1.pdf}
+	$f_\text{sample} \ge 2 f_\text{signal} \Rightarrow f_\text{antialias} \le \frac{f_\text{clk}}{2}$\\
+	$V_{\ir out}(nT) = V_{\ir out,0} - V_{\ir in}\cdot n \cdot \frac{C_1}{C_2}$
 \end{circuit}
 
 \begin{circuit}{Ladungspumpe}{img/ladungspumpe.pdf}
