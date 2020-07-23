@@ -154,7 +154,9 @@ $V_\text{GS1} + V_\text{GS3} - V_\text{th} \leq V_\text{in} \leq V_\text{out-} +
 
 \end{circuit}
 \begin{circuit}{Differenzstufe mit Stromspiegel-Last (nMOS)}{img/differenzstufe-mit-stromspiegel-last-2.pdf}
-%TODO
+	Differenzverstärkung $A_{\ir diff} \approx -\frac{g_{\ir m2}}{g_{\ir DS2}+g_{\ir DS3}}$\\
+	Gleichtaktverstärkung $A_{\ir cm} \approx -\frac{g_{\ir DS0}g_{\ir DS2}}{2g_{\ir m3}(g_{\ir DS2}+g_{DS3})}$\\
+	Gleichtaktunterdrückung CMRR = $\frac{A_{\ir diff}}{A_{\ir cm}} \approx 2 \frac{g_{\ir m3}}{g_{\ir DS0}}\frac{g_{\ir m2}}{g_{\ir DS2}}$
 \end{circuit}
 \begin{circuit}{Differenzstufe mit Diodenlast}{img/differenzstufe-mit-diodenlast.pdf}
 %TODO
@@ -287,8 +289,8 @@ Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 	Unterreferenzwerte: $V_r = \frac{\text{Widerstandswert bis zur Referenz}}{\text{Gesamtwiderstand}}V_{\ir ref}$\\
 	Quantisierungsschrittschawankung: $\Delta_{\ir meas} = V_{r_n+1}-V_{r_n}$\\
 	Differentielle Nichtlinearität: $\text{DNL}(n) = \frac{\Delta_{\ir meas}-\Delta}{\Delta}$ \quad $\text{DNL}_{\ir spec} = \frac{\max{\abs{\Delta_{\ir meas}}}-\Delta}{\Delta}$\\
+	Gain Error: $\text{GE} = \sum\Delta_{\ir meas} - V_{ref}$\\
 	Integrale Nichtlinearität: $\text{INL}(n) = (1+\text{GE})\sum_{i=1}^k \text{DNL}(i)$\\
-	%TODO: GE??
 \end{circuit}
 
 \begin{circuit}{DA Wandler (Stromquellen)}{img/da-stromquellen.pdf}
@@ -298,9 +300,9 @@ Hysterese: $V_{\ir HYS} = V_H - V_L = \frac{R_1}{R_2}V_{\ir DD}$
 
 \begin{circuit}{DA Wandler (Widerstände)}{img/da-widerstand.pdf}
 	$V_{\ir LSB = \frac{V_{\ir ref}}{2^n}}$\\
-	Unterreferenzwerte: $V_r = \frac{\ir Widerstandswert bis zur Referenz}{\ir Gesamtwiderstand}V_{\ir ref}$\\
+	Unterreferenzwerte: $V_r = \frac{\text{Widerstandswert bis zur Referenz}}{\text{Gesamtwiderstand}}V_{\ir ref}$\\
 	Quantisierungsschrittschawankung: $\Delta_{\ir meas} = V_{r_n+1}-V_{r_n}$\\
-	Differentielle Nichtlinearität: $DNL(n) = \frac{\Delta_{\ir meas}-\Delta}{\Delta}$ \quad $DNL_{\ir spec} = \frac{\max{(\Delta_{\ir meas})}-\Delta}{\Delta}$\\
+	Differentielle Nichtlinearität: $\text{DNL}(n) = \frac{\Delta_{\ir meas}-\Delta}{\Delta}$ \quad $\text{DNL}_{\ir spec} = \frac{\max{(\Delta_{\ir meas})}-\Delta}{\Delta}$\\
 	$V_{\ir out,os} = V_{\ir os}$
 \end{circuit}
 
