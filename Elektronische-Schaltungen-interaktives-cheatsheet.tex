@@ -15,7 +15,7 @@
 	\section{#1}
 	\includegraphics[width=5em]{#2}
 	\addcontentsline{cir}{blabla}
-	{\parbox{\linewidth}{\includegraphics[width=\linewidth]{#2}\\#1\hfill}\ \\}}
+	{\parbox{\linewidth}{\includegraphics[width=\linewidth]{#2}\\\begin{flushleft}#1\hfill\end{flushleft}}\ \\}}
 \let\mylistofcircuit\listofcircuit
 \renewcommand{\listofcircuit}{\subsection*{\listcircuitname}\vspace{-1.5em}\begin{multicols}{3}\mylistofcircuit\end{multicols}}
 % -- end
@@ -74,17 +74,33 @@ $r_{\ir out} = r_{\ir DS1}\parallel r_{\ir DS2}$
 	Betrag: $\abs{A(\omega)} = \frac{1}{\sqrt{1+(\omega C_L / g_{\ir m1})^2}}$\\
 	Phase: $\phi(A(\omega) = \arctan{(-\omega C_L / g_{\ir m1})}$\\
 
-\circuit{Stromspiegel mit Stromquelle}{img/stromspiegel-mit-stromquelle.pdf}
-\circuit{Differenzstufe mit resistiver Last}{img/differenzstufe-mit-resistiver-last.pdf}
 %\circuit{Differenzstufe mit Stromspiegel-Last (pMOS)}{img/differenzstufe-mit-stromspiegel-last-1.pdf}
-\circuit{Differenzstufe mit Stromspiegel-Last (nMOS)}{img/differenzstufe-mit-stromspiegel-last-2.pdf}
+
 \circuit{Differenzstufe mit Diodenlast}{img/differenzstufe-mit-diodenlast.pdf}
+$A \approx -\frac{g_{m1}}{g_{m2}}$\\
+$r_{out}=r_{DS1}\parallel r_{DS2}\parallel \frac{1}{g_{m2}} \approx \frac{1}{g_{m2}}$
 
-\section{x1}
+\circuit{Stromspiegel mit Stromquelle}{img/stromspiegel-mit-stromquelle.pdf}
+$I_\text{out} = I_\text{in}\frac{W_2}{L_2}\frac{L_1}{W_1}$\\
+$r_\text{in} = r_\text{DS1} \parallel \frac{1}{g_{m1}} \approx \frac{1}{g_{m1}}$\\
+$r_\text{out} = r_\text{DS2}$\\
 
-\section{x2}
+\circuit{Differenzstufe mit resistiver Last}{img/differenzstufe-mit-resistiver-last.pdf}
+$A_\text{diff} = -g_\text{m1}(r_\text{DS1}\parallel R_\text{D})\approx -g_mR_D$\\
+$A_\text{cm} = -\frac{R_\text{D}}{2r_\text{ds0}}$\\
+Bedingung für Sättigungsbereich:\\
+$V_\text{GS1} + V_\text{GS3} - V_\text{th} \leq V_\text{in} \leq V_\text{out-} + V_\text{th}$
 
-\section{x3}
+
+\circuit{Differenzstufe mit Stromspiegel-Last (nMOS)}{img/differenzstufe-mit-stromspiegel-last-2.pdf}
+
+\circuit{Differenzstufe mit Diodenlast}{img/Logo.pdf}
+
+\circuit{x1}{img/Logo.pdf}
+
+\circuit{x2}{img/Logo.pdf}
+
+\circuit{x3}{img/Logo.pdf}
 
 \circuit{Invertierender Verstärker}{img/invertierender-verstärker.pdf}
 %TODO ESB
