@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage[hidelinks]{hyperref}
+\usepackage{tocloft}
 
 \newcommand{\ir}{\text}
 \renewcommand{\j}{\text j}
@@ -17,19 +18,18 @@
 %\RequirePackage{latex4ei/latex4ei_unicode}
 
 % -- begin custom TOC for circuits
-\usepackage{tocloft}
-
-\newcommand{\listcircuitname}{Liste der Schaltungen}
+\newcommand{\listcircuitname}{Liste der Schaltungen (anklicken zum hinspringen)}
 \newlistof{circuit}{cir}{}
 \newenvironment{circuit}[2]{%
 	\refstepcounter{circuit}
 	% Content in TOC
-	\addcontentsline{cir}{blabla}
+	\addcontentsline{cir}{circuit}
 	{%
 		\parbox{\linewidth}{%
 			\begin{center}%
 				\includegraphics[width=\linewidth,height=\linewidth,keepaspectratio]{#2}%
 			\end{center}%
+			\vspace{-3.8em}\ \\
 			\begin{flushleft}%
 				#1\hfill%
 			\end{flushleft}
@@ -38,22 +38,33 @@
 	}
 	% Content on page
 	\section{#1}
-	\begin{minipage}{10em}
-		\includegraphics[height=1.6\linewidth,width=\linewidth,keepaspectratio]{#2}
+	\begin{minipage}[t]{12em}
+		\ \vspace{-\baselineskip}\\
+		\includegraphics[height=16em,width=\linewidth,keepaspectratio]{#2}\\
+		\hyperref[listofcircuits]{\bfseries\small(zurück zur Liste)}
 	\end{minipage}
-	\begin{minipage}[t]{\linewidth - 10em}
+	\begin{minipage}[t]{\linewidth - 12em}
 }{%
 	\end{minipage}
 }
 
+\renewcommand{\cftdotsep}{\cftnodots}
+
 \let\mylistofcircuit\listofcircuit
-\renewcommand{\listofcircuit}{\subsection*{\listcircuitname}\vspace{-1.5em}\begin{multicols}{4}\mylistofcircuit\end{multicols}}
+\renewcommand{\listofcircuit}{%
+	\subsection*{\listcircuitname}
+	\label{listofcircuits}
+	\vspace{-1.5em}
+	\begin{multicols}{4}
+		\mylistofcircuit
+	\end{multicols}
+}
 % -- end
 
+\cftpagenumbersoff{circuit}
 
 % DOCUMENT_BEGIN ===============================================================
 \begin{document}
-
 \IfFileExists{git.id}{\input{git.id}}{}
 \ifdefined\GitRevision\mydate{\GitNiceDate\ (git \GitRevision)}\fi
 
