@@ -160,6 +160,16 @@ $V_\text{GS1} + V_\text{GS3} - V_\text{th} \leq V_\text{in} \leq V_\text{out-} +
 
 \end{circuit}
 
+\begin{circuit}{Spannungsfolger mit Lastwiderstand}{img/spannungsfolger-mit-lastwiderstand.pdf}
+	$V_{\ir in} \geq V_{\ir GS3}-V_{\ir th}$\\
+	$V_{\ir in} \leq V_{\ir DD} - V_{\ir GS7} - V_{\ir GS1} + V_{\ir th}$\\
+	$V_{\ir out} \geq V_{\ir GS5} - V_{\ir th}$\\
+	$V_{\ir out} \leq V_{\ir DD} - V_{\ir GS6} + V_{\ir th}$\\
+	\\
+	$R_L > \frac{V_{\ir out}}{I_{\ir D6}}$\\
+	\includegraphics{img/op-innenleben.pdf}
+\end{circuit}
+
 \begin{circuit}{Invertierender Verstärker}{img/invertierender-verstärker.pdf}
 %TODO ESB
 Verstärkung (ideal): $A = -\frac{R_2}{R_1}$\\
@@ -204,6 +214,14 @@ Fall $R_3 = R_4$ und $R_1 = R_2$: $V_{\ir out} = V_{\ir in,p} - V_{\ir in,p}$
 \begin{circuit}{Instrumentenverstärker mit 2 OPV}{img/instrumentenverstärker-mit-2-op.pdf}
 	$V_{\ir O} = \left(1+\frac{R_2}{R_1}+\frac{2R_2}{R_5}\right)(V_{\ir i2} - V_{\ir i1})$
 \end{circuit}
+
+\begin{circuit}{Operationsverstärker}{img/op-innenleben.pdf}
+	Verstärkung Diff: $A_{\ir diff} = -g_{\ir m1}(r_{\ir DS2}\parallel r_{\ir DS4})$\\
+	Verstärkung Ausgang: $A_{\ir ausgang} = -g_{\ir m5}(r_{\ir DS5}\parallel r_{\ir DS6})$\\
+	Verstärkung gesamt: $A = g_{\ir m1}(r_{\ir DS2}\parallel r_{\ir DS4})g_{\ir m5}(r_{\ir DS5}\parallel r_{\ir DS6})$
+\end{circuit}
+
+
 \begin{circuit}{Miller Operationsverstärker}{img/miller-op.pdf}
 %TODO ESB
 %TODO Spannungsfolger mit Lastwiderstand
