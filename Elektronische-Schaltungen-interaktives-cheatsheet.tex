@@ -13,6 +13,7 @@
 \newcommand{\circuit}[2]{%
 	\refstepcounter{circuit}
 	\section{#1}
+	\includegraphics[width=5em]{#2}
 	\addcontentsline{cir}{blabla}
 	{\parbox{\linewidth}{\includegraphics[width=\linewidth]{#2}\\#1\hfill}\ \\}}
 \let\mylistofcircuit\listofcircuit
@@ -31,73 +32,53 @@
 
 \listofcircuit
 
-\circuit{Stromspiegel mit Widerstand}{img/Logo.pdf}
+\circuit{Stromspiegel mit Widerstand}{img/stromspiegel-mit-widerstand.pdf}
 Annahme: Sättigung $\rightarrow V_{\ir GS1} = V_{\ir DD}-RI_{\ir IN}$\\
 Überprüfe, ob Annahme korrekt\\
 $\frac{I_{\ir out}}{I_{\ir in}} = \frac{(W/L)_2}{(W/L)_1}$
-\circuit{Schalter (Transmission-Gate)}{img/Logo.pdf}
+\circuit{Schalter (Transmission-Gate)}{img/transmission-gate.pdf}
 $V_{\ir out} \approx V_{\ir in} \rightarrow$ Transistoren in Triodenbereich\\
-\circuit{Transistor mit resistiver Last}{img/Logo.pdf}
-	\subsection{Source an GND (immer +)}
+\circuit{Transistor mit resistiver Last (Source an GND, immer +)}{img/transistor-mit-resistiver-last-1.pdf}
 	%TODO ESB
 	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = g_{\ir m1}(r_{\ir DS1}\parallel R_D)$\\
 	$r_{\ir out} = r_{\ir DS1}\parallel R_D$\\
-	\subsection{$V_{\ir in}$ an Source}
+\circuit{Transistor mit resistiver Last ($V_{\ir in}$ an Source)}{img/transistor-mit-resistiver-last-2.pdf}	
+	$A \approx g_mR_d$\\
+	$r_\text{out} = r_{DS} \parallel R_D \approx R_D$\\
 	$r_{\ir in} = R_D \frac{r_{\ir DS}\parallel \frac{1}{g_m}}{r_{\ir DS}\parallel R_D}$
 	
-	\subsection{$R_S$ an Source}
+\circuit{Transistor mit resistiver Last ($R_S$ an Source)}{img/transistor-mit-resistiver-last-3.pdf}	
 	
 	
-\circuit{Sourceschaltung mit Stromquelle (- - -)}{img/Logo.pdf}
+\circuit{Sourceschaltung mit Stromquelle (- - -)}{img/sourceschaltung-mit-stromquelle.pdf}
 %TODO ESB
 Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}r_{\ir DS1}$\\
 $r_{\ir out} = r_{\ir DS1}$
-\circuit{Sourceschaltung mit aktiver Last (- -)}{img/Logo.pdf}
+\circuit{Sourceschaltung mit aktiver Last (- -)}{img/sourceschaltung-mit-aktiver-last.pdf}
 %TODO ESB
 Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})$\\
 $r_{\ir out} = r_{\ir DS1}\parallel r_{\ir DS2}$
-\section{Sourceschaltung mit Diodenlast}
-	\subsection{$V_in$ am unteren Transistor (-)}
+\circuit{Sourceschaltung mit Diodenlast [$V_{\ir in}$ am unteren Transistor (-)]}{img/sourceschaltung-mit-diodenlast-1.pdf}
 	%TODO ESB
 	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}\left( r_{\ir DS1}\parallel r_{\ir DS2}\parallel \frac{1}{g_{\ir m2}}\right)$\\
 	$r_{\ir out} = r_{\ir DS1}\parallel r_{\ir DS2}\parallel \frac{1}{g_{\ir m2}}$
-	\subsection{$V_in$ am oberen Transistor}
+\circuit{Sourceschaltung mit Diodenlast [$V_{\ir in}$ am oberen Transistor]}{img/sourceschaltung-mit-diodenlast-2.pdf}
 
-\section{Drainschaltung mit aktiver Last}
-	\subsection{ohne Lastkapazität ($\approx 1$)}
+\circuit{Drainschaltung mit aktiver Last [ohne $C_L$ ($\approx 1$)]}{img/drainschaltung-mit-aktiver-Last-1.pdf}
 	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = \frac{g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}{1 + g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}$ (kann auch $<1$ sein)\\
 	$r_{\ir out} = \frac{r_{\ir DS1}\parallel r_{\ir DS2}}{1 + g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}$
-	\subsection{mit Lastkapazität}
+\circuit{Drainschaltung mit aktiver Last [mit $C_L$]}{img/drainschaltung-mit-aktiver-Last-2.pdf}
 	%TODO ESB
 	Verstärkung: $A(\omega) = \frac{g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}{1 + g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})+\j\omega C_L(r_{\ir DS1}\parallel r_{\ir DS2})}$\\
 	Näherung: $\frac{g_{\ir m1}}{g_{\ir m1}+\j\omega C_L}$\\
 	Betrag: $\abs{A(\omega)} = \frac{1}{\sqrt{1+(\omega C_L / g_{\ir m1})^2}}$\\
 	Phase: $\phi(A(\omega) = \arctan{(-\omega C_L / g_{\ir m1})}$\\
 
-\section{Gateschaltung mit resistiver Last}
-%TODO Kleinsignal-ESB
-$A \approx g_mR_d$\\
-$r_\text{out} = r_{DS} \parallel R_D \approx R_D$\\
-$r_\text{in} = R_D\frac{r_{DS}\parallel \frac{1}{g_m}}{r_{DS}\parallel R_D}\approx \frac{1}{g_m}$
-
-\section{Drainschaltung mit aktiver last}
-%TODO ESB
-$A = \frac{g_{m1}(r_{DS1}\parallel r_{DS2})}{1+r_{DS1}\parallel r_{DS2})} \approx 1$\\
-$r_{out}=\frac{r_{DS1}\parallel r_{DS2}}{1+g_m(r_{DS1}\parallel r_{DS2})} \approx \frac{1}{g_{m1}}$
-
-\section{Transistor mit resistiver last}
-\section{sourceschaltung mit diodenlast}
-
-\section{Stromspiegel mit Stromquelle}
-
-\section{Differenzstufe mit resistiver Last}
-
-\section{Differenzstufe mit Stromspiegel-Last}
-	\subsection{pMOS-Differenzstufe}
-	
-	\subsection{nMOS-Differenzstufe}
-
-\section{Differenzstufe mit Diodenlast}
+\circuit{Stromspiegel mit Stromquelle}{img/stromspiegel-mit-stromquelle.pdf}
+\circuit{Differenzstufe mit resistiver Last}{img/differenzstufe-mit-resistiver-last.pdf}
+%\circuit{Differenzstufe mit Stromspiegel-Last (pMOS)}{img/differenzstufe-mit-stromspiegel-last-1.pdf}
+\circuit{Differenzstufe mit Stromspiegel-Last (nMOS)}{img/differenzstufe-mit-stromspiegel-last-2.pdf}
+\circuit{Differenzstufe mit Diodenlast}{img/differenzstufe-mit-diodenlast.pdf}
 
 \section{x1}
 
