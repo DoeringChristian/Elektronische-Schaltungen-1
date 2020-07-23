@@ -1,23 +1,53 @@
-% .:: Laden der LaTeX4EI Formelsammlungsvorlage
-\documentclass[european]{latex4ei_sheet}
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{placeins}
 
-\title{Elektronische \\ Schaltungen \\ Cheatsheet}
+\newcommand{\ir}{\text}
+\renewcommand{\j}{\text j}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
-\RequirePackage{latex4ei/latex4ei_unicode}
+\title{Elektronische Schaltungen: Interaktives Cheatsheet}
+\author{Paul Thiel, Justus Rossmeier}
+
+%\RequirePackage{latex4ei/latex4ei_unicode}
 
 % -- begin custom TOC for circuits
 \usepackage{tocloft}
 
 \newcommand{\listcircuitname}{Liste der Schaltungen}
 \newlistof{circuit}{cir}{}
-\newcommand{\circuit}[2]{%
+\newenvironment{circuit}[2]{%
 	\refstepcounter{circuit}
+	% Content on page
 	\section{#1}
-	\includegraphics[width=5em]{#2}
+	\begin{minipage}{5em}
+		\includegraphics[width=5em]{#2}
+	\end{minipage}\\
+	% Content in TOC
 	\addcontentsline{cir}{blabla}
-	{\parbox{\linewidth}{\includegraphics[width=\linewidth]{#2}\\\begin{flushleft}#1\hfill\end{flushleft}}\ \\}}
+	{%
+		\parbox{\linewidth}{%
+			\begin{center}%
+				\includegraphics[width=\linewidth,height=\linewidth,keepaspectratio]{#2}%
+			\end{center}%
+			\begin{flushleft}%
+				#1\hfill%
+			\end{flushleft}
+		}%
+		\ \\
+	}
+}{}
+
 \let\mylistofcircuit\listofcircuit
-\renewcommand{\listofcircuit}{\subsection*{\listcircuitname}\vspace{-1.5em}\begin{multicols}{3}\mylistofcircuit\end{multicols}}
+\renewcommand{\listofcircuit}{\subsection*{\listcircuitname}\vspace{-1.5em}\begin{multicols}{4}\mylistofcircuit\end{multicols}}
 % -- end
 
 
@@ -32,89 +62,111 @@
 
 \listofcircuit
 
-\circuit{Stromspiegel mit Widerstand}{img/stromspiegel-mit-widerstand.pdf}
+\begin{circuit}{Stromspiegel mit Widerstand}{img/stromspiegel-mit-widerstand.pdf}
 Annahme: Sättigung $\rightarrow V_{\ir GS1} = V_{\ir DD}-RI_{\ir IN}$\\
 Überprüfe, ob Annahme korrekt\\
 $\frac{I_{\ir out}}{I_{\ir in}} = \frac{(W/L)_2}{(W/L)_1}$
-\circuit{Schalter (Transmission-Gate)}{img/transmission-gate.pdf}
+\end{circuit}
+\begin{circuit}{Schalter (Transmission-Gate)}{img/transmission-gate.pdf}
 $V_{\ir out} \approx V_{\ir in} \rightarrow$ Transistoren in Triodenbereich\\
-\circuit{Transistor mit resistiver Last (Source an GND, immer +)}{img/transistor-mit-resistiver-last-1.pdf}
+\end{circuit}
+\begin{circuit}{Transistor mit resistiver Last (Source an GND, immer +)}{img/transistor-mit-resistiver-last-1.pdf}
 	%TODO ESB
 	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = g_{\ir m1}(r_{\ir DS1}\parallel R_D)$\\
 	$r_{\ir out} = r_{\ir DS1}\parallel R_D$\\
-\circuit{Transistor mit resistiver Last ($V_{\ir in}$ an Source)}{img/transistor-mit-resistiver-last-2.pdf}	
+\end{circuit}
+\begin{circuit}{Transistor mit resistiver Last ($V_{\ir in}$ an Source)}{img/transistor-mit-resistiver-last-2.pdf}	
 	$A \approx g_mR_d$\\
 	$r_\text{out} = r_{DS} \parallel R_D \approx R_D$\\
 	$r_{\ir in} = R_D \frac{r_{\ir DS}\parallel \frac{1}{g_m}}{r_{\ir DS}\parallel R_D}$
 	
-\circuit{Transistor mit resistiver Last ($R_S$ an Source)}{img/transistor-mit-resistiver-last-3.pdf}	
+\end{circuit}
+\begin{circuit}{Transistor mit resistiver Last ($R_S$ an Source)}{img/transistor-mit-resistiver-last-3.pdf}	
 	
 	
-\circuit{Sourceschaltung mit Stromquelle (- - -)}{img/sourceschaltung-mit-stromquelle.pdf}
+\end{circuit}
+\begin{circuit}{Sourceschaltung mit Stromquelle (- - -)}{img/sourceschaltung-mit-stromquelle.pdf}
 %TODO ESB
 Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}r_{\ir DS1}$\\
 $r_{\ir out} = r_{\ir DS1}$
-\circuit{Sourceschaltung mit aktiver Last (- -)}{img/sourceschaltung-mit-aktiver-last.pdf}
+\end{circuit}
+\begin{circuit}{Sourceschaltung mit aktiver Last (- -)}{img/sourceschaltung-mit-aktiver-last.pdf}
 %TODO ESB
 Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})$\\
 $r_{\ir out} = r_{\ir DS1}\parallel r_{\ir DS2}$
-\circuit{Sourceschaltung mit Diodenlast [$V_{\ir in}$ am unteren Transistor (-)]}{img/sourceschaltung-mit-diodenlast-1.pdf}
+\end{circuit}
+\begin{circuit}{Sourceschaltung mit Diodenlast [$V_{\ir in}$ am unteren Transistor (-)]}{img/sourceschaltung-mit-diodenlast-1.pdf}
 	%TODO ESB
 	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = -g_{\ir m1}\left( r_{\ir DS1}\parallel r_{\ir DS2}\parallel \frac{1}{g_{\ir m2}}\right)$\\
 	$r_{\ir out} = r_{\ir DS1}\parallel r_{\ir DS2}\parallel \frac{1}{g_{\ir m2}}$
-\circuit{Sourceschaltung mit Diodenlast [$V_{\ir in}$ am oberen Transistor]}{img/sourceschaltung-mit-diodenlast-2.pdf}
+\end{circuit}
+\begin{circuit}{Sourceschaltung mit Diodenlast [$V_{\ir in}$ am oberen Transistor]}{img/sourceschaltung-mit-diodenlast-2.pdf}
 
-\circuit{Drainschaltung mit aktiver Last [ohne $C_L$ ($\approx 1$)]}{img/drainschaltung-mit-aktiver-Last-1.pdf}
+\end{circuit}
+\begin{circuit}{Drainschaltung mit aktiver Last [ohne $C_L$ ($\approx 1$)]}{img/drainschaltung-mit-aktiver-Last-1.pdf}
 	Verstärkung: $\frac{V_{\ir out}}{V_{\ir in}} = \frac{g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}{1 + g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}$ (kann auch $<1$ sein)\\
 	$r_{\ir out} = \frac{r_{\ir DS1}\parallel r_{\ir DS2}}{1 + g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}$
-\circuit{Drainschaltung mit aktiver Last [mit $C_L$]}{img/drainschaltung-mit-aktiver-Last-2.pdf}
+\end{circuit}
+\begin{circuit}{Drainschaltung mit aktiver Last [mit $C_L$]}{img/drainschaltung-mit-aktiver-Last-2.pdf}
 	%TODO ESB
 	Verstärkung: $A(\omega) = \frac{g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})}{1 + g_{\ir m1}(r_{\ir DS1}\parallel r_{\ir DS2})+\j\omega C_L(r_{\ir DS1}\parallel r_{\ir DS2})}$\\
 	Näherung: $\frac{g_{\ir m1}}{g_{\ir m1}+\j\omega C_L}$\\
 	Betrag: $\abs{A(\omega)} = \frac{1}{\sqrt{1+(\omega C_L / g_{\ir m1})^2}}$\\
 	Phase: $\phi(A(\omega) = \arctan{(-\omega C_L / g_{\ir m1})}$\\
 
-%\circuit{Differenzstufe mit Stromspiegel-Last (pMOS)}{img/differenzstufe-mit-stromspiegel-last-1.pdf}
+%\end{circuit}
+%\begin{circuit}{Differenzstufe mit Stromspiegel-Last (pMOS)}{img/differenzstufe-mit-stromspiegel-last-1.pdf}
 
-\circuit{Differenzstufe mit Diodenlast}{img/differenzstufe-mit-diodenlast.pdf}
+\end{circuit}
+\begin{circuit}{Differenzstufe mit Diodenlast}{img/differenzstufe-mit-diodenlast.pdf}
 $A \approx -\frac{g_{m1}}{g_{m2}}$\\
 $r_{out}=r_{DS1}\parallel r_{DS2}\parallel \frac{1}{g_{m2}} \approx \frac{1}{g_{m2}}$
 
-\circuit{Stromspiegel mit Stromquelle}{img/stromspiegel-mit-stromquelle.pdf}
+\end{circuit}
+\begin{circuit}{Stromspiegel mit Stromquelle}{img/stromspiegel-mit-stromquelle.pdf}
 $I_\text{out} = I_\text{in}\frac{W_2}{L_2}\frac{L_1}{W_1}$\\
 $r_\text{in} = r_\text{DS1} \parallel \frac{1}{g_{m1}} \approx \frac{1}{g_{m1}}$\\
 $r_\text{out} = r_\text{DS2}$\\
 
-\circuit{Differenzstufe mit resistiver Last}{img/differenzstufe-mit-resistiver-last.pdf}
+\end{circuit}
+\begin{circuit}{Differenzstufe mit resistiver Last}{img/differenzstufe-mit-resistiver-last.pdf}
 $A_\text{diff} = -g_\text{m1}(r_\text{DS1}\parallel R_\text{D})\approx -g_mR_D$\\
 $A_\text{cm} = -\frac{R_\text{D}}{2r_\text{ds0}}$\\
 Bedingung für Sättigungsbereich:\\
 $V_\text{GS1} + V_\text{GS3} - V_\text{th} \leq V_\text{in} \leq V_\text{out-} + V_\text{th}$
 
 
-\circuit{Differenzstufe mit Stromspiegel-Last (nMOS)}{img/differenzstufe-mit-stromspiegel-last-2.pdf}
+\end{circuit}
+\begin{circuit}{Differenzstufe mit Stromspiegel-Last (nMOS)}{img/differenzstufe-mit-stromspiegel-last-2.pdf}
 
-\circuit{Differenzstufe mit Diodenlast}{img/Logo.pdf}
+\end{circuit}
+\begin{circuit}{Differenzstufe mit Diodenlast}{img/Logo.pdf}
 
-\circuit{x1}{img/Logo.pdf}
+\end{circuit}
+\begin{circuit}{x1}{img/Logo.pdf}
 
-\circuit{x2}{img/Logo.pdf}
+\end{circuit}
+\begin{circuit}{x2}{img/Logo.pdf}
 
-\circuit{x3}{img/Logo.pdf}
+\end{circuit}
+\begin{circuit}{x3}{img/Logo.pdf}
 
-\circuit{Invertierender Verstärker}{img/invertierender-verstärker.pdf}
+\end{circuit}
+\begin{circuit}{Invertierender Verstärker}{img/invertierender-verstärker.pdf}
 %TODO ESB
 Verstärkung (ideal): $A = -\frac{R_2}{R_1}$\\
 Verstärkung (real): $A = -\frac{A\frac{R_2}{R_1+R_2}}{1+A\frac{R_1}{R_1+R_2}}$\\
 Ausgangswiderstand: $r_{\ir out} = 0$\\
 Eingangswiderstand: $r_{\ir in} = R_1$\\
 
-\circuit{Invertierender Verstärker mit Offset}{img/invertierender-verstärker-mit-offset.pdf}
+\end{circuit}
+\begin{circuit}{Invertierender Verstärker mit Offset}{img/invertierender-verstärker-mit-offset.pdf}
 	Ausgangsspannung (ideal): $-\frac{R_2}{R_1}V_{\ir in}+\left( 1+\frac{R_2}{R_1}\right)V_{\ir os}$\\
 	Ausgangsspannung (real): $-\frac{A\frac{R_2}{R_1+R_2}}{1+A\frac{R_1}{R_1+R_2}}V_{\ir in}+\frac{A}{1+A\frac{R_1}{R_1+R_2}}V_{\ir os}$
 
 
-\circuit{Nichtinvertierender Verstärker}{img/nichtinvertierender-verstärker.pdf}
+\end{circuit}
+\begin{circuit}{Nichtinvertierender Verstärker}{img/nichtinvertierender-verstärker.pdf}
 \subsection{$V_{\ir ref} = 0$}
 Verstärkung (ideal): $A = 1 + \frac{R_2}{R_1}$\\
 Verstärkung (real): $A = \frac{A}{1+A\frac{R_1}{R_1+R_2}}$\\
@@ -124,18 +176,21 @@ Eingangswiderstand: $r_{\ir in} = \infty$\\
 $A=\frac{V_{\ir out,max}-V_{\ir ref}}{V_{\ir in}-V_{\ir ref}}$
 
 
-\circuit{Summierverstärker}{img/summierverstärker.pdf}
+\end{circuit}
+\begin{circuit}{Summierverstärker}{img/summierverstärker.pdf}
 Ausgangsspannung: $V_{\ir out} = - \sum_{k=1}^N V{\ir ein,k}\frac{R_3}{R_k}$\\
 Fall $k=2$: $-\left( \frac{V_{\ir in,1}}{R_1} + \frac{V_{\ir in,2}}{R_2}R_3\right)$\\ 
 Verstärkung (real): $A = \frac{A}{1+A\frac{R_1}{R_1+R_2}}$\\
 Ausgangswiderstand: $r_{\ir out} = 0$\\
 Eingangswiderstand: $r_{\ir in} = \infty$\\
 
-\circuit{Differenzverstärker}{img/differenzverstärker.pdf}
+\end{circuit}
+\begin{circuit}{Differenzverstärker}{img/differenzverstärker.pdf}
 Ausgangsspannung: $V_{\ir out} = V_{\ir in,p}\frac{R_4}{R_3+R_4} \frac{R_1+R_2}{R_1} - \frac{R_2}{R_1} V_{\ir in,p}$\\
 Fall $R_3 = R_4$ und $R_1 = R_2$: $V_{\ir out} = V_{\ir in,p} - V_{\ir in,p}$
 
-\circuit{Miller Operationsverstärker}{img/miller-op.pdf}
+\end{circuit}
+\begin{circuit}{Miller Operationsverstärker}{img/miller-op.pdf}
 %TODO ESB
 Verstärkung Ausgangsstufe: $A = g_{\ir m5}(r_{\ir DS5}\parallel r_{\ir DS6})$
 $C_1 = C_F(1+A) \approx C_FA$ \qquad $C_2 = C_F\left(1+\frac{1}{A}\right) \approx C_F$ \\
@@ -144,9 +199,10 @@ Grenzfrequenz: $f_{G1} = \frac{1}{2\pi C_1r_{\ir out,diff}}$ \quad $f_{G2} = \fr
 $A_0 = g_{\ir m1}(r_{\ir DS2}\parallel r_{\ir DS4})g_{\ir m5}(r_{\ir DS5}\parallel r_{\ir DS6})$\\
 Übertragungsfunktion: $A(\omega)=\frac{A_0}{\left(1+\j\frac{f}{f_1}\right)\left(1+\j\frac{f}{f_2}\right)}$\\
 
-\circuit{Komparator}{img/komparator.pdf}
+\end{circuit}
+\begin{circuit}{Komparator}{img/komparator.pdf}
 Schaltschwellen: $ $\\
-
+\end{circuit}
 
 
 %TODO Spannungsfolger mit Lastwiderstand
