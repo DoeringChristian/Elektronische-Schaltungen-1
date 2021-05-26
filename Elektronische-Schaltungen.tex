@@ -5,14 +5,171 @@
 
 \RequirePackage{latex4ei/latex4ei_unicode}
 
-% DOCUMENT_BEGIN ===============================================================
+%Packages:
+
+\usepackage[european, lazymos]{circuitikz}
+\usepackage{adjustbox}
+
+% DOCUMENT BEGIN
 \begin{document}
 
 \IfFileExists{git.id}{\input{git.id}}{}
 \ifdefined\GitRevision\mydate{\GitNiceDate\ (git \GitRevision)}\fi
 
-% Title (needs ./img/Logo.pdf)
-\maketitle
+% Title
+% ----------------------------------------------------------------------
+\maketitle   % requires ./img/Logo.pdf
 
-% DOCUMENT_END =================================================================
+\section{Transistoren und Passive Bauelemente}
+
+
+\begin{sectionbox}
+    \textbf{\"Ubersicht:}
+    \begin{itemize}
+        \item Trioden/Linearer -bereich:
+            \begin{itemize}
+                \item Gatespannung $ V_{GS} > V_ {th} $, Drainspannung $ 0 < V_{DS} < V_{GS} - V_{th} $
+                \item gesamter Kanalbereich in (starker) Inversion,
+                    an jedem Ort $ y $ im Kanalbereich gilt für die lokale Spannung $ V_{ch}(y) < V_{GS} - V_{th} $
+                \item Drainstrom: $ I_D = {W \over L} \mu_n C_{ox} (V_{GS} - V_{th} - {1 \over 2} V_{DS}) V_{DS} $ mit $ C_{ox} = \epsilon_0 \epsilon_r {1 \over t_{ox}} $
+                \item Steilheit: $ g_m = {W \over L} \mu_n C_{ox} V_{DS} $, $ g_{DS} = {W \over L} k (V_{GS} - V_{th} - V_{DS}) $
+            \end{itemize}
+        \item Sättingungsbereich:
+            \begin{itemize}
+                \item $ V_{GS} > V_{th} $, $ V_{DS} > V_{GS} - V_{th} $ 
+                \item Grossteil des Kanalbereiches in Inversion, im drain-nahen Bereich is $ V_{ch}(y) < V_{GS} - V_{th} $ (Inversionsbedingung) jedoch nicht erfüllt
+                \item Drainstrom ( $ V_{GS} - V_{th} < v_{DS} $ SH-Modell )
+                    $ I_D = I_{D,sat} [1+\lambda {L_{min} \over L} (V_{DS}- V_{DS,sat})] $, $ I_D = {1 \over 2}{W \over L} \mu C_{ox} (V_{GS} - V_{th})^2 [1+\lambda {L_{min} \over L} (V_{DS} - (V_{GS} - V_{th}))] $ 
+                \item Steilheit: $ g_m \approx {W \over L} \mu C_{ox} (V_{GS} - V_{th}) $, $ g_{DS} = \lambda {L_{min} \over L} I_D $
+            \end{itemize}
+        \item Unterschwellbereich:
+            \begin{itemize}
+                \item $ V_{GS} < V_{th} $
+                \item Drainstrom ''sehr klein'' - Inversionsbedingung im Kanalbereich nicht erfüllt.
+                \item $ I_D = {W \over L} I_{D,0} \cdot 10^({V_{GS}-V_{th} \over S}) = {W \over L} I_{D,0} \cdot exp({V_{GS}-V_{th} \over S} ln(10)) $
+            \end{itemize}
+    \end{itemize}
+    \subsection{Kleinsignal:}
+    \newcommand{\circuitscale}{0.7}
+    \begin{minipage}{\textwidth}
+        \begin{minipage}{0.3\textwidth}
+            Grossignal:\\
+            \begin{circuitikz}[scale = \circuitscale, transform shape]
+                \ctikzset{tripoles/mos style/arrows}
+                \draw 
+                % mosfet
+                (0,0) node[nmos](mos01){}
+                (mos01.B) node[left](){B}
+                (mos01.S) node[right](){B}
+                (mos01.D) node[right](){D}
+                ;
+            \end{circuitikz}
+        \end{minipage}
+        \begin{minipage}{0.5\textwidth}
+            Ohne Kapazitäten:\\
+            \begin{circuitikz}[scale = \circuitscale, transform shape]
+                \ctikzset{tripoles/mos style/arrows}
+                \draw 
+                % esb
+                (3,1) node[label={[font=\footnotesize]above:G}] {} to[short,*-o] (3,1)
+                ++(0,-2) node[left](){S} to[short, o-*] ++(2,0)
+                to[short, *-*] ++(2,0)
+                to[short, *-o] ++(2,0)
+                node[right](){S}
+                ++(-4,0) to[cisource, f<=$g_m v_{GS}$] ++(0,2)
+                to[short, -*] ++(2,0)
+                to[R=$g_{DS}$] ++(0,-2)
+                ++(0,2) to[short, *-o] ++(2,0)
+                node[right](){S}
+                ;
+            \end{circuitikz}
+        \end{minipage}
+        \\
+        Mit Kapazitäten:
+        \\
+        \begin{circuitikz}[scale = \circuitscale, transform shape]
+            \ctikzset{tripoles/mos style/arrows}
+            \draw
+            (0,0) node[left](G){G} to[short, o-*] ++(1,0)
+            to[C, l_=$C_{GS}+C_{GB}$] ++(0,-2)
+            to[short, *-o] ++(-1,0)
+            node[left](S){S}
+            ++(1,0) to[short, *-*] ++(2,0)
+            to[short, *-*] ++(2,0)
+            to[short, *-*] ++(2,0)
+            to[short, *-o] ++(1,0)
+            node[right](S){S}
+            ++(-1,0) to[C=$C_{DB}$] ++(0,2)
+            to[short, *-o] ++(1,0)
+            node[right](D){D}
+            ++(-1,0) to[short, *-*] ++(-2,0)
+            to[short, *-*] ++(-2,0)
+            to[C=$C_{GD}$] ++(-2,0)
+            ++(2,-2) to[cisource, f_<=$g_m v_{GS}$] ++(0,2)
+            ++(2,0) to[R=$g_{DS}$] ++(0,-2)
+            ;
+        \end{circuitikz}
+    \end{minipage}
+\end{sectionbox}
+
+\begin{sectionbox}
+    \newcommand{\circuitscale}{0.5}
+    \textbf{Grundlegende Schaltungen}
+    \subsection{Sourceschaltung n-MOS:}
+    \begin{minipage}{0.5\textwidth}
+        Grossignal\\
+        \begin{circuitikz}[scale = \circuitscale, transform shape]
+            \draw
+            (0,0) node[left](){$V_{ein}$} to[short, o-*] (0.5,0)
+            to[C=$C_{ein}$] ++(2,0)
+            to[R, l_=$R_G$] ++(0,-2)
+            to[vsource, l=$V_{GS}$] ++(0,-2)
+            node[rground](){}
+            ++(0,4)
+            to[short, *-] ++(0.5,0)
+            node[nmos, anchor=B](m1){M1}
+            (m1.D) node[circ]{} to[R, l_=$R_D$] ++(0,2)
+            node[vcc]{VDD}
+            (m1.D) to[C=$C_{aus}$] ++(2,0)
+            to[short, *-o] ++(0,0)
+            node[right](vaus){$V_{aus}$}
+            %to[open, f=$V_{aus}$]
+            %++(0,-5) node[ocirc](){} 
+            %node[rground](){}
+            %++(0,3)
+            (m1.S) to[short, -] ++(0,-3.2)
+            node[rground](){}
+            ;
+        \end{circuitikz}
+        Kleinsignal\\
+        \begin{circuitikz}[scale = \circuitscale, transform shape]
+            \draw
+            (0,0) node[rground]{} node[ocirc]{}
+            ++(0,2) node[left](vein){$V_{ein}$} to[short, o-] ++(1,0)
+            to[R=$R_G$] ++(0,-2)
+            to[short, -*] ++(2,0)
+            node[below, xshift=0.2cm](){S}
+            node[circ](s){}
+            node[rground]{}
+            to[short, *-*] ++(2,0)
+            to[short, *-] ++(2,0)
+            to[R=$R_{D}$] ++(0,2)
+            to[short, *-o] node[above](vaus){$V_{aus}$} ++(1,0)
+            ++(0,-2) node[ocirc]{} node[rground]{}
+            (s) to[cisource, f<=$g_m v_{ein}$] ++(0,2)
+            to[short, -*] ++(2,0)
+            node[above](){D}
+            node[circ](d){}
+            to[R=$r_{DS}$] ++(0,-2)
+            (d) to[short, -*] ++(2,0)
+            ;
+        \end{circuitikz}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+    \end{minipage}
+\end{sectionbox}
+
+
+
+% DOCUMENT END
 \end{document}
